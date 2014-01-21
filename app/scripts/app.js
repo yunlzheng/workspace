@@ -14,11 +14,23 @@ angular.module('towerApp', [
       })
       .when('/progress', {
         templateUrl: 'partials/progress',
-        controller: 'ProgressCtrl'
+        controller: 'ProgresCtrl'
       })
       .when('/calendars', {
         templateUrl: 'partials/calendars',
         controller: 'CalendarCtrl'
+      })
+      .when('/members', {
+        templateUrl: 'partials/members',
+        controller: 'MemberCtrl'
+      })
+      .when('/stats', {
+        templateUrl: 'partials/stats',
+        controller: 'StatCtrl'
+      })
+      .when('/me', {
+        templateUrl: 'partials/me',
+        controller: 'MeCtrl'
       })
       .otherwise({
         redirectTo: '/'
