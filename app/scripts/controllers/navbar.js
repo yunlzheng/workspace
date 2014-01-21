@@ -8,22 +8,22 @@ angular.module('towerApp')
     },
     {
       'title': '回顾',
-      'link': '/#progress'
+      'link': '/progress'
     },
     {
       'title': '日历',
-      'link': '/#calendars'
+      'link': '/calendars'
     },
     {
       'title': '团队',
-      'link': '/#members'
+      'link': '/members'
     },
     {
       'title': '统计',
-      'link': '/#stats'
+      'link': '/stats'
     },{
       'title': '我自己',
-      'link': '/#me'
+      'link': '/me'
     }];
     
     $scope.isActive = function(route) {
