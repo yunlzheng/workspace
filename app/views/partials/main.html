@@ -1,21 +1,29 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
-</div>
-
-<div class="row marketing">
-  <div ng-repeat="thing in awesomeThings">
-      <h4>{{thing.name}}</h4>
-      <p>{{thing.info}}</p>
+<div class="page sheet-root" id="page-team-show">
+  <h2>Hello Somebody, 这是你的项目</h2>
+  <div class="projects">
+    <div class="project">
+      <a title="workspace" class="folder">
+        <span class="badge"></span>
+      </a>
+      <h6 class="name">
+        <a title="workspace">workspace</a>
+      </h6>
+      <p class="desc">编程马拉松 团队项目管理</p>
+    </div>
+    <div class="project">
+      <a title="workspace" class="folder">
+        <span class="badge"></span>
+      </a>
+      <h6 class="name">
+        <a title="workspace">workspace2</a>
+      </h6>
+      <p class="desc">编程马拉松</p>
+    </div>
   </div>
 </div>
 
 <div class="footer">
-  <p>♥ from the Yeoman team</p>
+  <p>@Code4Fun</p>
 </div>
