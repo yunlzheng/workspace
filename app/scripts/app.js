@@ -12,6 +12,10 @@ angular.module('towerApp', [
         templateUrl: 'partials/main',
         controller: 'MainCtrl'
       })
+      .when('/progress', {
+        templateUrl: 'partials/progress',
+        controller: 'ProgressCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
