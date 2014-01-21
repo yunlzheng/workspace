@@ -16,7 +16,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var config = require('./lib/config/config');
 
 // Connect to database
-//var db = mongoose.connect(config.mongo.uri, config.mongo.options);
+var db = mongoose.connect(config.mongo.uri, config.mongo.options);
 
 // Bootstrap models
 var modelsPath = path.join(__dirname, 'lib/models');
@@ -25,7 +25,7 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 });
 
 // Populate empty DB with sample data
-////require('./lib/config/dummydata');
+require('./lib/config/dummydata');
 
 var app = express();
 
