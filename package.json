@@ -8,7 +8,9 @@
     "ejs": "~0.8.4",
     "passport": "~0.1.18",
     "passport-local": "~0.1.6",
-    "passport-github": "~0.1.5"
+    "passport-github": "~0.1.5",
+    "passport-google-oauth": "~0.1.5",
+    "connect-flash": "~0.1.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
