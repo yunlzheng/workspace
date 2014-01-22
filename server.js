@@ -3,7 +3,8 @@
 var express = require('express'),
     path = require('path'),
     fs = require('fs'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    passport = require('passport');
 
 /**
  * Main application file
@@ -29,11 +30,14 @@ require('./lib/config/dummydata');
 
 var app = express();
 
+//Passport settings
+require('./lib/config/passport')(passport, config);
+
 // Express settings
 require('./lib/config/express')(app);
 
 // Routing
-require('./lib/routes')(app);
+require('./lib/routes')(app, passport);
 
 // Start server
 app.listen(config.port, function () {

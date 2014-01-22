@@ -9,6 +9,10 @@ angular.module('towerApp', [
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
+        templateUrl: 'partials/launchpad',
+        controller: 'LanchpadCtrl'
+      })
+      .when('/terms/:term', {
         templateUrl: 'partials/main',
         controller: 'MainCtrl'
       })
