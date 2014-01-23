@@ -44,5 +44,8 @@ app.listen(config.port, function () {
   console.log('Express server listening on port %d in %s mode', config.port, app.get('env'));
 });
 
+// Pusher
+var pusher = require('./lib/config/pusher');
+
 // Expose app
 exports = module.exports = app;
