@@ -45,7 +45,7 @@ app.listen(config.port, function () {
 });
 
 // Pusher
-var pusher = require('./lib/config/pusher');
+//var pusher = require('./lib/config/pusher');
 
 // Expose app
 exports = module.exports = app;
