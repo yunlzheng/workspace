@@ -15,8 +15,8 @@ angular.module('towerApp', [
         controller: 'LanchpadCtrl'
       })
       .when('/terms/:term', {
-        templateUrl: 'partials/main',
-        controller: 'MainCtrl'
+        templateUrl: 'partials/projects',
+        controller: 'ProjectsCtrl'
       })
       .when('/progress', {
         templateUrl: 'partials/progress',

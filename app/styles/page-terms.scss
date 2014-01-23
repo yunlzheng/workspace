@@ -22,6 +22,18 @@
         overflow: hidden;
         padding-top: 20px;
         text-align: center;
+        &.new{
+            .folder{
+                margin-top: 2px;
+                background-image: url(/images/btn-new-project.png);
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                background-color: rgba(0, 0, 0, 0);
+                &:hover{
+                    background-position: 0 -113px;
+                }
+            }
+        }
     }
     &#page-team-show .project .folder {
         background-color: rgb(236, 232, 213);
@@ -37,5 +49,6 @@
         margin: 0 auto 15px;
         font-family: "towericon";
         outline: none;
+        
     }
 }
