@@ -16,12 +16,17 @@
             .term{
                 font-size: 24px;
                 border-bottom: 1px solid rgb(204, 204, 204);
+               
                 &.new{
                     border-bottom:none;
+                    a{
                     background: rgb(249, 249, 249);
+                    }
                 }
                 &:hover{
+                    a{
                     background: rgb(249, 249, 249);
+                    }
                 }
                 a{
                     position: relative;

@@ -4,10 +4,10 @@
   <h2>启动器</h2>
   <div class='terms'>
     <div class="term" ng-repeat='term in terms'>
-        <a ng-href='/terms/{{ term._id }}'><span>{{ term.name }}</span><b class="fly">✈</b></a>
+        <a ng-href='/#terms/{{ term._id }}'><span>{{ term.name }}</span><b class="fly">✈</b></a>
     </div>
     <div class="term new">
-        <a><span class="icon-new">+</span><span>Create New Term</span></a>
+        <a ng-click='open()'><span class="icon-new">+</span><span>New Term</span></a>
     </div>
   </div>
 </div>

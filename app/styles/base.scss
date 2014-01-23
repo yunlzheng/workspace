@@ -1,0 +1,13 @@
+$success-color: rgb(182, 217, 113);
+$siccess-hover-color: rgb(159, 194, 91);
+
+.btn{
+	border:none;
+}
+
+.btn-success{
+	background-color:$success-color;
+	&:hover{
+		background-color:$siccess-hover-color;
+	}
+}

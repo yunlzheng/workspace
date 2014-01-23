@@ -1,5 +1,8 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
+@import 'base';
+@import 'modal';
+
 @import 'page-terms';
 @import 'page-lauchpad';
 

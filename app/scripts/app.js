@@ -4,7 +4,9 @@ angular.module('towerApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'tower.resources',
+  'ui.bootstrap.modal'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -40,5 +42,5 @@ angular.module('towerApp', [
         redirectTo: '/'
       });
       
-    $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true);
   });

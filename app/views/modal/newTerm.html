@@ -1,0 +1,13 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()">&times;</button>
+    <h3>新团队名称</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form">
+    	<input ng-model="term.name" required type="text" name="team"  placeholder="例如：iPhone 5 设计团队" autofocus=""  class="form-control"/>
+	</form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" ng-disabled="form.$invalid" ng-click="ok(term)">创建团队</button>
+    <a class="btn" ng-click="cancel()">取消</a>
+</div>

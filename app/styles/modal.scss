@@ -1,0 +1,37 @@
+.modal-content{
+	border-radius:0px;
+	-webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-backdrop.in {
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.modal-dialog {
+	width: 600px;
+	padding-top: 100px;
+	padding-bottom: 30px;
+}
+
+.modal-header{
+	border-bottom:none;
+	h3{
+	font-size: 24px;
+	color: rgb(132, 160, 153);
+	margin: 10px 0 20px 0;	
+	}
+}
+
+.modal-body {
+	position: relative;
+	padding: 0px 20px;
+}
+
+.modal-footer {
+	margin-top: 15px;
+	padding: 0px 20px 20px;
+	text-align: left;
+	border-top: none;
+}
