@@ -1,8 +1,12 @@
 'use strict';
 
 angular.module('towerApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $http.get('/api/awesomeThings').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
+  .controller('MainCtrl', function ($scope, $routeParams, &http) {
+    var termId = $routeParams.term;
+    $http.get('/api/terms/'+termId+'/projects').success(function(data){
+
+        console.log(data);
+
     });
+
   });

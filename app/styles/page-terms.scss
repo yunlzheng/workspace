@@ -1,0 +1,41 @@
+.page{
+
+    &#page-team-show h2 {
+        margin-bottom: 30px;
+    }
+    &#page-team-show .projects {
+        margin: 10px 0 0 0;
+    }
+    &#page-team-show .project {
+        -webkit-transition: -webkit-transform 100ms ease-in-out;
+        -moz-transition: -moz-transform 100ms ease-in-out;
+        transition: transform 100ms ease-in-out;
+        -webkit-transition: -webkit-box-shadow 100ms ease-in-out;
+        -moz-transition: -moz-box-shadow 100ms ease-in-out;
+        transition: box-shadow 100ms ease-in-out;
+    }
+    &#page-team-show .project {
+        position: relative;
+        float: left;
+        width: 240px;
+        height: 200px;
+        overflow: hidden;
+        padding-top: 20px;
+        text-align: center;
+    }
+    &#page-team-show .project .folder {
+        background-color: rgb(236, 232, 213);
+        color: rgb(200, 191, 165);
+        border-color: rgb(200, 191, 165);
+        background-image: url(/images/folder.png);
+        background-repeat: no-repeat;
+        background-position: top left;
+        position: relative;
+        display: block;
+        width: 152px;
+        height: 113px;
+        margin: 0 auto 15px;
+        font-family: "towericon";
+        outline: none;
+    }
+}
