@@ -5,6 +5,10 @@ $siccess-hover-color: rgb(159, 194, 91);
 	border:none;
 }
 
+a{
+	cursor: pointer;
+}
+
 .btn-success{
 	background-color:$success-color;
 	&:hover{
