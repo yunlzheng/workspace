@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('towerApp')
-  .controller('CalendarCtrl', [function ($scope) {
+  .controller('CalendarCtrl', ['$scope', function ($scope) {
     
-      
+      $scope.eventSources = [];
 
   }]);
