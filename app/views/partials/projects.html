@@ -8,9 +8,9 @@
         <span class="badge"></span>
       </a>
       <h6 class="name">
-        <a title="workspace">workspace</a>
+        <a title="workspace" ng-bind='project.name'></a>
       </h6>
-      <p class="desc">编程马拉松 团队项目管理</p>
+      <p class="desc" mg-bind='project.info'></p>
     </div>
     <div class="project new">
         <a title="创建新项目" ng-href="#/terms/{{ termId }}/project/new" class="folder denied">

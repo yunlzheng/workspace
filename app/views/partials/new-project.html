@@ -4,10 +4,10 @@
 		<h3>创建新项目</h3>
 		<form class="form" name="form">
 			<div class="form-group">
-				<input type="text" class="form-control" id="exampleInputEmail1" placeholder="项目名称">
+				<input type="text" ng-model="project.name" required class="form-control" id="exampleInputEmail1" placeholder="项目名称">
 			</div>
 			<div class="form-group">
-				<textarea class="form-control" rows="3" placeholder="简单描述项目，便于其他人理解（选填）"></textarea>
+				<textarea class="form-control" ng-model="project.info" required rows="3" placeholder="简单描述项目，便于其他人理解（选填）"></textarea>
 			</div>
 			<div class="form-group">
 				 <label>你的团队还没有其他成员，填写成员邮箱邀请他们加入吧</label>
@@ -21,12 +21,12 @@
 			          <li><a >管理员</a></li>
 			          <li><a >访客</a></li>
 			        </ul>
-			      </div><!-- /btn-group -->
-			    </div><!-- /input-group -->
+			      </div>
+			    </div>
 			</div>
 			<p class="add-invite-wrap"><a id="add-invite-item">+ 再加一个</a></p>
 			<div class="form-group form-bottons">
-				<button class="btn btn-success" ng-disabled="form.$invalid" ng-click="ok(term)" disabled="disabled">创建团队</button>
+				<button class="btn btn-success" ng-disabled="form.$invalid" ng-click="newProject(project)" disabled="disabled">创建团队</button>
 				<a class="btn btn-x" data-stack="">取消</a>
 			</div>
 		</form>

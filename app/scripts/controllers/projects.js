@@ -5,7 +5,7 @@ angular.module('towerApp')
     $scope.termId = $routeParams.term;
     $http.get('/api/terms/'+$scope.termId+'/projects').success(function(data){
 
-        
+        $scope.projects = data;
 
     });
 
