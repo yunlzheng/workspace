@@ -10,19 +10,24 @@
 				<textarea class="form-control" rows="3" placeholder="简单描述项目，便于其他人理解（选填）"></textarea>
 			</div>
 			<div class="form-group">
+				 <label>你的团队还没有其他成员，填写成员邮箱邀请他们加入吧</label>
 				<div class="input-group">
+
 			      <input type="text" class="form-control">
 			      <div class="input-group-btn">
-			        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+			        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">成员 <span class="caret"></span></button>
 			        <ul class="dropdown-menu pull-right">
-			          <li><a href="#">Action</a></li>
-			          <li><a href="#">Another action</a></li>
-			          <li><a href="#">Something else here</a></li>
-			          <li class="divider"></li>
-			          <li><a href="#">Separated link</a></li>
+			          <li><a >成员</a></li>
+			          <li><a >管理员</a></li>
+			          <li><a >访客</a></li>
 			        </ul>
 			      </div><!-- /btn-group -->
 			    </div><!-- /input-group -->
+			</div>
+			<p class="add-invite-wrap"><a id="add-invite-item">+ 再加一个</a></p>
+			<div class="form-group form-bottons">
+				<button class="btn btn-success" ng-disabled="form.$invalid" ng-click="ok(term)" disabled="disabled">创建团队</button>
+				<a class="btn btn-x" data-stack="">取消</a>
 			</div>
 		</form>
 	</div>
