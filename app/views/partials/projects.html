@@ -4,7 +4,7 @@
   <h2>Hello Somebody, 这是你的项目</h2>
   <div class="projects">
     <div class="project" ng-repeat="project in projects">
-      <a title="workspace" class="folder">
+      <a title="workspace" class="folder" ng-href="#/projects/{{ project._id }}">
         <span class="badge"></span>
       </a>
       <h6 class="name">
