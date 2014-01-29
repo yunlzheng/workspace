@@ -1,10 +1,38 @@
 <div ng-include="'partials/navbar'"></div>
 <div class="page sheet-root sheet-active" id="page-project-show">
-	<div class="project-header"></div>
-	<div class="project-links"></div>
-	<div class="section-messages"></div>
+	<div class="project-header">
+		<div class="project-hd-info">
+			<span class="project-title" ng-bind='project.name'></span>
+			<br>
+			<span class="project-desc" ng-bind='project.info'></span>
+		</div>
+	</div>
+	<div class="project-links">
+		<a class="link-admin link-admin-members" title="成员管理"  style="display: none;">成员</a>
+		<a  class="link-admin link-admin-settings" title="项目设置"  style="display: none;">设置</a>
+		<a class="link-admin link-recap" title="查看项目的每日进展">进展</a>
+		<a class="link-admin link-stat" title="项目数据统计" >统计</a>
+	</div>
+	<div class="section-messages">
+		<h3 class="topics-head">
+			<a class="title">讨论</a>
+			<a class="btn btn-mini btn-new-discussion">发起新的讨论</a>
+		</h3>
+	</div>
+	<h3>
+		<a class="title">任务</a>
+		<a class="btn btn-mini btn-new-todolist">添加任务列表</a>
+	</h3>
 	<div class="todos-all"></div>
-	<div class="section-docs"></div>
-	<div class="section-files"></div>
+	<div class="section-docs">
+		<h3>
+			<a class="title" >文档</a>
+		</h3>
+	</div>
+	<div class="section-files">
+		<h3>
+			<a class="title" >文件</a>
+		</h3>
+	</div>
 	<div class="trash"></div>
 </div>
