@@ -1,5 +1,35 @@
 .page{
 	&#page-project-show{
-		
+		padding: 0 40px 40px;
+		.project-header{
+			padding: 30px 2px 26px;
+			background: url(/images/project-head-border.png) repeat-x 0 100%;
+			.project-title {
+				display: inline-block;
+				max-width: 640px;
+				margin-bottom: 10px;
+				border-bottom: 1px solid rgba(0, 0, 0, 0);
+				font-size: 28px;
+				font-family: "Microsoft Yahei","SimHei",Helvetica,Arial;
+				line-height: 28px;
+				color: rgb(85, 85, 85);
+				text-align: left;
+			}
+			.project-desc {
+				border-bottom: 1px solid rgba(0, 0, 0, 0);
+				font-size: 14px;
+				color: rgb(102, 102, 102);
+				line-height: 1.5;
+				margin: 10px 0 0 0;
+				text-align: left;
+			}
+		}
+		.project-links {
+			position: absolute;
+			margin: 4px 0;
+			top: 30px;
+			right: 45px;
+			overflow: hidden;
+		}
 	}
 }
