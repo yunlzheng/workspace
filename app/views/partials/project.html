@@ -27,7 +27,6 @@
 				<div class="editor-html editor-wrapper toolbar-enabled">
 					<div class="editor-toolbar" style="top: 0px;">
 						<ul>
-							
 							<li>
 								<a tabindex="-1" unselectable="on" class="toolbar-item bold disable" title="加粗（Ctrl + b）">
 									<span class="fa fa-bold"></span>
@@ -86,6 +85,15 @@
 		<a class="title">任务</a>
 		<a class="btn btn-border btn-sm btn-new-todolist">添加任务列表</a>
 	</h3>
+	<form class='form form-editor'>
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="给任务列表起个名字">
+		</div>
+		<div class="form-group">
+          <button type="submit" class="btn btn-create-todolist btn-success" data-disable-with="正在保存...">保存，开始添加任务</button>
+          <a class="btn" ng-click="cancel()">取消</a>
+		</div>
+	</form>
 	<div class="todos-all"></div>
 	<div class="section-docs">
 		<h3>
