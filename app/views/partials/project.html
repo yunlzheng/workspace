@@ -18,6 +18,69 @@
 			<a class="title">讨论</a>
 			<a class="btn btn-border btn-sm btn-new-discussion">发起新的讨论</a>
 		</h3>
+		<form class="form form-editor">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="话题">
+			</div>
+			<div class="form-group">
+				<textarea tabindex="1" name="content" id="txt-content" placeholder="说点什么..."  style="display: none;"></textarea>
+				<div class="editor-html editor-wrapper toolbar-enabled">
+					<div class="editor-toolbar" style="top: 0px;">
+						<ul>
+							
+							<li>
+								<a tabindex="-1" unselectable="on" class="toolbar-item bold disable" title="加粗（Ctrl + b）">
+									<span class="fa fa-bold"></span>
+								</a>
+							</li>
+							
+							<li>
+								<a tabindex="-1" unselectable="on" class="toolbar-item underline disable"  title="下划线（Ctrl + u）" >
+									<span class="fa fa-underline"></span>
+								</a>
+							</li>
+							
+							<li>
+								<a tabindex="-1" unselectable="on" class="toolbar-item deleteline disable"  title="删除线">
+									<span class="fa fa-strikethrough"></span>
+								</a>
+							</li>
+							<li>
+								<span class="separator"></span>
+							</li>
+							<li>
+								<a tabindex="-1" unselectable="on" class="toolbar-item ol disable"  title="有序列表">
+									<span class="fa fa-list-ol"></span>
+								</a>
+							</li>
+							<li>
+								<a tabindex="-1" unselectable="on" class="toolbar-item ul disable"  title="无序列表">
+									<span class="fa fa-list-ul"></span>
+								</a>
+							</li>
+							<li>
+								<a tabindex="-1" unselectable="on" class="toolbar-item blockquote disable" title="引用">
+									<span class="fa fa-quote-left"></span>
+								</a>
+							</li>
+							<li>
+								<a tabindex="-1" unselectable="on" class="toolbar-item code disable" title="代码">
+									<span class="fa fa-code"></span>
+								</a>
+							</li>
+							<li>
+								<span class="separator"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="editor-body" contenteditable="true" tabindex="1">
+						<p>
+							<br>
+						</p>
+					</div>
+				</div>
+			</div>
+		</form>
 	</div>
 	<h3>
 		<a class="title">任务</a>

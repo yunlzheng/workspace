@@ -36,3 +36,9 @@ textarea{
 	max-width: 600px;
 	font-size:20px;
 }
+
+.form-editor{
+	input[type='text']{
+		width: 100%;
+	}
+}
