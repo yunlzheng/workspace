@@ -5,6 +5,16 @@ $siccess-hover-color: rgb(159, 194, 91);
 	border:none;
 }
 
+a.btn{
+	color:rgb(0, 0, 0);
+}
+
+.btn-border {
+	border-color: rgb(204, 204, 204);
+	border-width: 1px;
+	border-style: solid;
+}
+
 a{
 	cursor: pointer;
 }
