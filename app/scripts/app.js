@@ -27,6 +27,10 @@ angular.module('towerApp', [
         templateUrl: 'partials/project',
         controller: 'ProjectCtrl'
       })
+      .when('/projects/:project/docs/new', {
+        templateUrl: 'partials/new-doc.html',
+        controller: 'NewDocCtrl'
+      })
       .when('/progress', {
         templateUrl: 'partials/progress',
         controller: 'ProgresCtrl'
