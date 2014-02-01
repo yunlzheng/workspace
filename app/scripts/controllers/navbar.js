@@ -4,7 +4,7 @@ angular.module('towerApp')
   .controller('NavbarCtrl', function ($scope, $location) {
     $scope.menu = [{
       'title': '项目',
-      'link': '/'
+      'link': '#/'
     },
     {
       'title': '回顾',
