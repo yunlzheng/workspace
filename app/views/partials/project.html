@@ -44,7 +44,22 @@
 		</form>
 		<div class="messages">
 			<div class="message" ng-repeat='discuss in discusses'>
-				{{ discuss.content }}
+				<a><img class="avatar" src="https://towerfiles.oss.aliyuncs.com/avatar/380d6a17776d4ffdb1da3182eb70d36c"></a>
+				<div class="name">
+					<a>Author</a>
+				</div>
+				<a class="message-link">
+					<span class="message-title">
+						Title: {{ discuss.title }} 
+					</span>
+					<span class="message-content">
+			        	{{ discuss.content }}
+					</span>
+				</a>
+				<span class="time" title="{{ discuss.create_at }}">{{ discuss.create_at }}</span>
+				<a class="comments-count">
+					1
+				</a>
 			</div>
 		</div>
 	</div>
