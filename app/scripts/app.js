@@ -5,6 +5,7 @@ angular.module('towerApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  'contenteditable',
   'tower.resources',
   'ui.bootstrap.modal',
   'ui.calendar'

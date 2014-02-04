@@ -31,5 +31,80 @@
 			right: 45px;
 			overflow: hidden;
 		}
+		.messages {
+			margin: 0 0 30px;
+			.message {
+				padding-top: 10px;
+				padding-bottom: 5px;
+				padding-left: 124px;
+				padding: 15px 64px 12px 126px;
+				border-bottom: 1px solid rgb(221, 221, 221);
+				position: relative;
+				.avatar {
+					display: block;
+					-moz-border-radius: 50%;
+					-webkit-border-radius: 50%;
+					border-radius: 50%;
+					-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+					-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+					box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+					position: absolute;
+					left: 5px;
+					width: 36px;
+					height: 36px;
+					top: 9px;
+				}
+				.name {
+					top: 22px;
+					left: 50px;
+					width: 58px;
+					font-size: 12px;
+					line-height: 12px;
+					text-align: center;
+					position: absolute;
+				}
+				 .message-link {
+					display: block;
+					min-height: 40px;
+					font-size: 14px;
+					line-height: 16px;
+					.message-title {
+						display: block;
+						color: rgb(51, 51, 51);
+					}
+					.message-content {
+						margin-top: 3px;
+						line-height: 1.2;
+						display: block;
+						color: rgb(153, 153, 153);
+						margin: 6px 0 0 0;
+						word-wrap: break-word;
+					}
+				}
+				.time {
+					display: block;
+					font-size: 12px;
+					line-height: 12px;
+					color: rgb(170, 170, 170);
+					position: absolute;
+					top: 12px;
+					right: 5px;
+				}
+				.comments-count {
+					display: block;
+					font-size: 11px;
+					line-height: 12px;
+					color: rgb(255, 255, 255);
+					padding: 2px 8px;
+					background: rgb(221, 221, 221);
+					-moz-border-radius: 10px;
+					-webkit-border-radius: 10px;
+					border-radius: 10px;
+					position: absolute;
+					top: 30px;
+					right: 5px;
+				}
+			}
+		}
 	}
 }
