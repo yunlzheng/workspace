@@ -6,6 +6,8 @@ angular.module('towerApp')
         $scope.discusses = [];
         $scope.taskLists = [];
 
+        $scope.projectId = $routeParams.project;
+
     	$http.get('/api/projects/'+$routeParams.project).success(function(data){
     		$scope.project = data;
     	});
