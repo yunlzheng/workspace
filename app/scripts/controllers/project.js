@@ -17,6 +17,7 @@ angular.module('towerApp')
     		
     		$http.post('/api/projects/'+$routeParams.project+'/discuss/new', discuss).success(function(data){
     		 	$scope.discusses.push(data);
+                $scope.showNewDissuss = false;
     		});
     	};
 
