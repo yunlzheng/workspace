@@ -42,6 +42,10 @@
           		<a class="btn" ng-click="showNewDissuss=false">取消</a>
 			</div>
 		</form>
+		<div class="init init-discussion" ng-show="!discusses">
+			<div class="title">还没有人发起讨论</div>
+			<p class="desc">对讨论的使用有疑惑？看看我们<a target="_blank" href="/pages/discuss-story/">如何使用讨论让决策更高效</a></p>
+		</div>
 		<div class="messages">
 			<div class="message" ng-repeat='discuss in discusses'>
 				<a><img class="avatar" src="https://towerfiles.oss.aliyuncs.com/avatar/380d6a17776d4ffdb1da3182eb70d36c"></a>
@@ -52,7 +56,7 @@
 					<span class="message-title">
 						Title: {{ discuss.title }} 
 					</span>
-					<span class="message-content" contenteditable>
+					<span class="message-content" contenteditable='false'>
 			        	{{ discuss.content }}
 					</span>
 				</a>
@@ -63,29 +67,44 @@
 			</div>
 		</div>
 	</div>
-	<h3>
-		<a class="title">任务</a>
-		<a class="btn btn-border btn-sm btn-new-todolist">添加任务列表</a>
-	</h3>
-	<form class='form form-editor'>
-		<div class="form-group">
-			<input type="text" class="form-control" placeholder="给任务列表起个名字">
+
+	<div class="section-tasks">
+		<h3>
+			<a class="title">任务</a>
+			<a class="btn btn-border btn-sm btn-new-todolist" ng-click="showNewTaskList=!showNewTaskList">添加任务列表</a>
+		</h3>
+		<form class='form form-editor' ng-show='showNewTaskList'>
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="给任务列表起个名字">
+			</div>
+			<div class="form-group">
+	          <button type="submit" class="btn btn-create-todolist btn-success" data-disable-with="正在保存...">保存，开始添加任务</button>
+	          <a class="btn" ng-click="showNewTaskList=false">取消</a>
+			</div>
+		</form>
+		<div class="init init-todo-empty">
+			<div class="title">没有需要处理的任务</div>
+			<p class="desc">对任务的使用有疑惑？看看我们<a target="_blank" href="/pages/task-story/">如何使用任务让项目顺利运行</a></p>
 		</div>
-		<div class="form-group">
-          <button type="submit" class="btn btn-create-todolist btn-success" data-disable-with="正在保存...">保存，开始添加任务</button>
-          <a class="btn" ng-click="cancel()">取消</a>
-		</div>
-	</form>
-	<div class="todos-all"></div>
+		<div class="todos-all"></div>
+	</div>
 	<div class="section-docs">
 		<h3>
 			<a class="title" >文档</a>
+			<a class="btn btn-border btn-sm btn-new-doc">创建新文档</a>
 		</h3>
-	</div>
+		<div class="init init-docs">
+			<div class="title">还没有在线文档</div>
+			</div>
+		</div>
 	<div class="section-files">
 		<h3>
 			<a class="title" >文件</a>
+			<a class="btn btn-border btn-sm btn-new-file">上传文件</a>
 		</h3>
+		<div class="init init-file">
+			<div class="title">还没有人上传过文件</div>
+		</div>
 	</div>
 	<div class="trash"></div>
 </div>

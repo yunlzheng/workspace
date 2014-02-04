@@ -55,6 +55,4 @@ angular.module('towerApp', [
       .otherwise({
         redirectTo: '/'
       });
-      
-    //$locationProvider.html5Mode(true);
   });
