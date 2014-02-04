@@ -108,3 +108,45 @@
 		}
 	}
 }
+
+.init.init-discussion {
+	background: url(/images/init-discussion.png) no-repeat 5px 15px;
+	margin: 0;
+	padding: 20px 60px 10px;
+}
+
+.init .title {
+	font-size: 16px;
+	color: rgb(153, 153, 153);
+	line-height: 1.2;
+}
+
+.init .desc {
+	font-size: 14px;
+	color: rgb(170, 170, 170);
+	line-height: 1.2;
+	margin: 20px 0 0 0;
+}
+
+.init .desc a {
+	margin: 0 5px;
+}
+
+.init.init-todo-completed, .init.init-todo-empty {
+	background: url(/images/init-todo.png) no-repeat 5px 4px;
+	margin: 0 0 20px 0;
+	padding: 10px 50px 10px;
+}
+
+.init.init-docs {
+	background: url(/images/init-document.png) no-repeat 7px 2px;
+	margin: 20px 0;
+	padding: 12px 50px 10px;
+	
+}
+
+.init.init-file {
+	background: url(/images/init-file.png) no-repeat 7px 2px;
+	margin: 20px 0;
+	padding: 12px 50px 10px;
+}

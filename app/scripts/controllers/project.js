@@ -3,6 +3,9 @@
 angular.module('towerApp')
   .controller('ProjectCtrl', ['$scope', '$routeParams', '$http' ,function ($scope, $routeParams, $http) {
 
+        $scope.discusses = [];
+        $scope.taskLists = [];
+
     	$http.get('/api/projects/'+$routeParams.project).success(function(data){
     		$scope.project = data;
     	});
@@ -12,6 +15,7 @@ angular.module('towerApp')
     	});
 
         $scope.showNewDissuss = false;
+        $scope.showNewTaskList = false;
 
     	$scope.newDiscuss = function(discuss){
     		
