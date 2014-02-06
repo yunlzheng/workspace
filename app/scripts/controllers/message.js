@@ -8,4 +8,8 @@ angular.module('towerApp')
     	$scope.project = data;
       });
 
+      $http.get('/api/discusses/'+ $routeParams.message).success(function(data){
+      	$scope.message = data;
+      });
+
   }]);
