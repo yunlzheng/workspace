@@ -1,0 +1,51 @@
+<div ng-include="'partials/navbar'"></div>
+
+<div class="page sheet sheet-root" id="page-message">
+  <div class="page sheet-root">
+	<div class="sheet-header"><a class="link-parent-sheet" ng-bind="project.name"></a></div>
+	<div class="page sheet sheet-active sheet-1">
+		<div class="page-inner">
+				<div class="topic">
+					
+					<div class="message">
+						<div class="message-subject">
+							<h3 title="{{ message.title }}" ng-bind="message.title"></h3>
+						</div>
+
+						<a class="avatar-wrap">
+							<img class="avatar" src="/assets/default_avatars/path.jpg" width="50" height="50">
+						</a>
+
+						<div class="message-main">
+							<div class="info">
+								<a class="author" href="/members/f9e961d6cfc14d03bb16df79da8f8955/">tower.im</a>
+								<span class="create-time" title="2014-01-21 13:42">1月21日</span>
+							</div>
+
+							<div class="message-content editor-style" ng-bind="message.content"></div>
+
+						</div>
+					</div>
+
+				</div>
+				<div class="comments"></div>
+				<div class="detail-actions">
+
+					<div class="item">
+						<a>编辑</a>
+					</div>
+					<div class="item" data-visible-to="creator,admin" style="display: block;">
+						<a>删除</a>
+					</div>
+				
+				</div>
+
+			</div>
+  	</div>
+  </div>
+  
+</div>
+
+<div class="footer">
+  <p>@Code4Fun</p>
+</div>
