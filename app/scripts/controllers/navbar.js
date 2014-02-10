@@ -22,7 +22,8 @@ angular.module('towerApp')
     {
       'title': '统计',
       'link': '#/stats'
-    },{
+    },
+    {
       'title': '我自己',
       'link': '#/me'
     }];

@@ -2,7 +2,7 @@
 
 <div class="page sheet sheet-root" id="page-message">
   <div class="page sheet-root">
-	<div class="sheet-header"><a class="link-parent-sheet" ng-bind="project.name"></a></div>
+	<div class="sheet-header"><a class="link-parent-sheet" ng-bind="project.name" ng-href="#/projects/{{ project._id }}"></a></div>
 	<div class="page sheet sheet-active sheet-1">
 		<div class="page-inner">
 				<div class="topic">
@@ -35,7 +35,7 @@
 						<a>编辑</a>
 					</div>
 					<div class="item" data-visible-to="creator,admin" style="display: block;">
-						<a>删除</a>
+						<a ng-click="remove()">删除</a>
 					</div>
 				
 				</div>
