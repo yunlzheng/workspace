@@ -22,9 +22,11 @@ angular.module('towerApp')
     	$scope.newDiscuss = function(discuss){
     		
     		$http.post('/api/projects/'+$routeParams.project+'/discuss/new', discuss).success(function(data){
-    		 	$scope.discusses.push(data);
+    		 	$scope.discusses.unshift(data);
                 $scope.showNewDissuss = false;
+                $scope.discuss = {};
     		});
+
     	};
 
   }]);

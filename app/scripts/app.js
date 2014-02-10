@@ -56,6 +56,10 @@ angular.module('towerApp', [
         templateUrl: 'partials/me',
         controller: 'MeCtrl'
       })
+      .when('/members/:member/settings', {
+        templateUrl: 'partials/settings',
+        controller: 'SettingCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -2,6 +2,7 @@
 
 angular.module('towerApp')
   .controller('NavbarCtrl', function ($scope, $location) {
+
     $scope.menu = [{
       'title': '项目',
       'link': '#/'
@@ -21,7 +22,8 @@ angular.module('towerApp')
     {
       'title': '统计',
       'link': '#/stats'
-    },{
+    },
+    {
       'title': '我自己',
       'link': '#/me'
     }];

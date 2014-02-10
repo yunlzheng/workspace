@@ -8,10 +8,10 @@
 		</div>
 	</div>
 	<div class="project-links">
-		<a class="link-admin link-admin-members" title="成员管理"  style="display: none;">成员</a>
-		<a  class="link-admin link-admin-settings" title="项目设置"  style="display: none;">设置</a>
-		<a class="link-admin link-recap" title="查看项目的每日进展">进展</a>
-		<a class="link-admin link-stat" title="项目数据统计" >统计</a>
+		<a class="link-admin link-admin-members" title="成员管理" ><i class="fa fa-users"></i>成员</a>
+		<a class="link-admin link-admin-settings" title="项目设置"><i class="fa fa-cog"></i>设置</a>
+		<a class="link-admin link-recap" title="查看项目的每日进展"><i class="fa fa-align-left"></i>进展</a>
+		<a class="link-admin link-stat" title="项目数据统计" ><i class="fa fa-bar-chart-o"></i>统计</a>
 	</div>
 	<div class="section-messages">
 		<h3 class="topics-head">
@@ -26,10 +26,49 @@
 				<div class="editor-html editor-wrapper toolbar-enabled">
 					<div class="editor-toolbar" style="top: 0px;">
 						<ul>
+							
 							<li>
 								<a tabindex="-1" unselectable="on" class="toolbar-item bold disable" title="加粗（Ctrl + b）">
 									<span class="fa fa-bold"></span>
 								</a>
+							</li>
+							
+							<li>
+								<a tabindex="-1" unselectable="on" class="toolbar-item underline disable"  title="下划线（Ctrl + u）" >
+									<span class="fa fa-underline"></span>
+								</a>
+							</li>
+							
+							<li>
+								<a tabindex="-1" unselectable="on" class="toolbar-item deleteline disable"  title="删除线">
+									<span class="fa fa-strikethrough"></span>
+								</a>
+							</li>
+							<li>
+								<span class="separator"></span>
+							</li>
+							<li>
+								<a tabindex="-1" unselectable="on" class="toolbar-item ol disable"  title="有序列表">
+									<span class="fa fa-list-ol"></span>
+								</a>
+							</li>
+							<li>
+								<a tabindex="-1" unselectable="on" class="toolbar-item ul disable"  title="无序列表">
+									<span class="fa fa-list-ul"></span>
+								</a>
+							</li>
+							<li>
+								<a tabindex="-1" unselectable="on" class="toolbar-item blockquote disable" title="引用">
+									<span class="fa fa-quote-left"></span>
+								</a>
+							</li>
+							<li>
+								<a tabindex="-1" unselectable="on" class="toolbar-item code disable" title="代码">
+									<span class="fa fa-code"></span>
+								</a>
+							</li>
+							<li>
+								<span class="separator"></span>
 							</li>
 						</ul>
 					</div>
@@ -42,13 +81,13 @@
           		<a class="btn" ng-click="showNewDissuss=false">取消</a>
 			</div>
 		</form>
-		<div class="init init-discussion" ng-show="!discusses">
+		<div class="init init-discussion" ng-show="!discusses.length">
 			<div class="title">还没有人发起讨论</div>
-			<p class="desc">对讨论的使用有疑惑？看看我们<a target="_blank" href="/pages/discuss-story/">如何使用讨论让决策更高效</a></p>
+			
 		</div>
 		<div class="messages">
 			<div class="message" ng-repeat='discuss in discusses'>
-				<a><img class="avatar" src="https://towerfiles.oss.aliyuncs.com/avatar/380d6a17776d4ffdb1da3182eb70d36c"></a>
+				<a><img class="avatar" src="/images/identicon.png"></a>
 				<div class="name">
 					<a>Author</a>
 				</div>
@@ -84,14 +123,13 @@
 		</form>
 		<div class="init init-todo-empty">
 			<div class="title">没有需要处理的任务</div>
-			<p class="desc">对任务的使用有疑惑？看看我们<a target="_blank" href="/pages/task-story/">如何使用任务让项目顺利运行</a></p>
 		</div>
 		<div class="todos-all"></div>
 	</div>
 	<div class="section-docs">
 		<h3>
 			<a class="title" >文档</a>
-			<a class="btn btn-border btn-sm btn-new-doc">创建新文档</a>
+			<a class="btn btn-border btn-sm btn-new-doc" href="#/projects/{{ projectId }}/docs/new">创建新文档</a>
 		</h3>
 		<div class="init init-docs">
 			<div class="title">还没有在线文档</div>
