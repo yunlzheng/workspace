@@ -136,3 +136,50 @@ body {
     margin-top: 28px;
 }
 
+.header{
+    ul{
+        list-style: none;
+    }
+    .navbar-form{
+        position: relative;
+        margin-top: 2px;
+    }
+    .account-info{
+        margin-right: 60px;
+        .dropdown-menu{
+            background: rgb(255, 255, 255);
+            border: 1px solid rgb(204, 204, 204);
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+            border-radius: 6px;
+        }
+        .member-settings {
+            float: left;
+            margin: -1px 4px 0 20px;
+            position: relative;
+            .link-member-menu {
+                display: inline;
+                width: 28px;
+                height: 28px;
+                img{
+                    &.avatar{
+                        display: inline;
+                        vertical-align: middle;
+                        width: 26px;
+                        height: 26px;
+                        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+                        -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+                        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+                        -webkit-transition: box-shadow 0.1s ease-in-out;
+                        -moz-transition: box-shadow 0.1s ease-in-out;
+                        transition: box-shadow 0.1s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header .input-search {
+    width:100px;
+}
