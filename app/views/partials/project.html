@@ -101,7 +101,7 @@
 				</a>
 				<span class="time" title="{{ discuss.create_at }}">{{ discuss.create_at | date:'MM月dd日'}}</span>
 				<a class="comments-count">
-					1
+					0
 				</a>
 			</div>
 		</div>
@@ -112,19 +112,36 @@
 			<a class="title">任务</a>
 			<a class="btn btn-border btn-sm btn-new-todolist" ng-click="showNewTaskList=!showNewTaskList">添加任务列表</a>
 		</h3>
-		<form class='form form-editor' ng-show='showNewTaskList'>
+		<form class='form form-editor' ng-show='showNewTaskList' name="form2">
 			<div class="form-group">
-				<input type="text" class="form-control" placeholder="给任务列表起个名字">
+				<input type="text" class="form-control" placeholder="给任务列表起个名字" required ng-model="tasklist.name">
 			</div>
 			<div class="form-group">
-	          <button type="submit" class="btn btn-create-todolist btn-success" data-disable-with="正在保存...">保存，开始添加任务</button>
+	          <button type="submit" class="btn btn-create-todolist btn-success" ng-disabled="form2.$invalid" ng-click="newTaskList(tasklist)">保存，开始添加任务</button>
 	          <a class="btn" ng-click="showNewTaskList=false">取消</a>
 			</div>
 		</form>
-		<div class="init init-todo-empty">
+		<div class="init init-todo-empty" ng-show="!tasks.length">
 			<div class="title">没有需要处理的任务</div>
 		</div>
-		<div class="todos-all"></div>
+		<div class="todos-all">
+			<div class="todolists-wrap">
+				<div class="todolists ui-sortable">
+					<div class="todolist" ng-repeat="task in tasks">
+						<div class="title">
+							<h4>
+								<a ng-bind="task.name"></a>
+							</h4>
+						</div>
+						<p class="todolist-auto-archive-tip" ng-show="!task.todos.length">恭喜，任务都已完成：）</p>
+						<ul class="todos">
+							<li class="todo"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
 	</div>
 	<div class="section-docs">
 		<h3>

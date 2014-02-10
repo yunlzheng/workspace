@@ -16,6 +16,10 @@ angular.module('towerApp')
     		$scope.discusses = data;
     	});
 
+        $http.get('/api/projects/'+$routeParams.project+'/tasks').success(function(data){
+            $scope.tasks = data;
+        });
+
         $scope.showNewDissuss = false;
         $scope.showNewTaskList = false;
 
@@ -28,5 +32,17 @@ angular.module('towerApp')
     		});
 
     	};
+
+        $scope.newTaskList = function(taskList){
+
+            taskList.project = $routeParams.project;
+            console.log(taskList);
+            $http.post('/api/projects/'+$routeParams.project+'/tasklist/new', taskList).success(function(data){
+
+                console.log(data);
+
+            });
+
+        }
 
   }]);

@@ -169,3 +169,44 @@
 	margin: 20px 0;
 	padding: 12px 50px 10px;
 }
+
+.todos-all .todolists-wrap {
+	float: left;
+}
+
+.todolists {
+	width: 630px;
+	margin: 0 0 0 2px;
+	.todolist {
+		position: relative;
+		margin: 0 0 20px 0;
+		.todolist-auto-archive-tip {
+	
+			color: rgb(187, 187, 187);
+			font-size: 12px;
+		}
+		.title {
+			margin-bottom: 10px;
+			h4 {
+				margin: 0 0 0 -10px;
+				padding: 0 0 0 10px;
+				font-size: 16px;
+				color: rgb(0, 0, 0);
+				a {
+					color: rgb(0, 0, 0);
+					font-weight: bold;
+				}
+			}
+		}
+		ul{
+			list-style: none;
+		}
+		.todo {
+			font-size: 15px;
+			padding: 2px 5px 2px 10px;
+			margin: 0 0 0 -10px;
+			position: relative;
+		}
+	}
+}
+
