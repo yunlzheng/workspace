@@ -1,7 +1,24 @@
 .page{
 	&#page-project-show{
 		padding: 0 40px 40px;
-		
+		 .project-links a {
+			display: block;
+			float: left;
+			margin-left: 20px;
+			line-height: 20px;
+			font-size: 14px;
+			color: rgb(153, 153, 153);
+			opacity: .8;
+			height: 20x;
+			text-decoration: none;
+			&:hover{
+				color: rgb(119, 119, 119);
+				opacity: 1;
+			}
+			.fa{
+				margin-right:2px;
+			}
+		}
 		.messages {
 			margin: 0 0 30px;
 			.message {
