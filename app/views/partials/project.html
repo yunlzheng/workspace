@@ -81,9 +81,9 @@
           		<a class="btn" ng-click="showNewDissuss=false">取消</a>
 			</div>
 		</form>
-		<div class="init init-discussion" ng-show="!discusses">
+		<div class="init init-discussion" ng-show="!discusses.length">
 			<div class="title">还没有人发起讨论</div>
-			<p class="desc">对讨论的使用有疑惑？看看我们<a target="_blank" href="/pages/discuss-story/">如何使用讨论让决策更高效</a></p>
+			
 		</div>
 		<div class="messages">
 			<div class="message" ng-repeat='discuss in discusses'>
@@ -123,14 +123,14 @@
 		</form>
 		<div class="init init-todo-empty">
 			<div class="title">没有需要处理的任务</div>
-			<p class="desc">对任务的使用有疑惑？看看我们<a target="_blank" href="/pages/task-story/">如何使用任务让项目顺利运行</a></p>
+			
 		</div>
 		<div class="todos-all"></div>
 	</div>
 	<div class="section-docs">
 		<h3>
 			<a class="title" >文档</a>
-			<a class="btn btn-border btn-sm btn-new-doc">创建新文档</a>
+			<a class="btn btn-border btn-sm btn-new-doc" href="#/projects/{{ projectId }}/docs/new">创建新文档</a>
 		</h3>
 		<div class="init init-docs">
 			<div class="title">还没有在线文档</div>
