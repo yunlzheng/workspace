@@ -1,15 +1,15 @@
 <div class="header" ng-controller="NavbarCtrl">
-  <h3 class="text-muted">Open Tower</h3>
+  <h3 class="text-muted">Open</h3>
   <ul class="nav nav-pills pull-left" id='navbar'>
     <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-        <a ng-href="{{item.link}}">{{item.title}}</a>
+        <a ng-href="{{ item.link }}">{{item.title}}</a>
     </li>
   </ul>
-  <ul class="account-info navbar-right">
+  <ul class="account-info">
     <li class="member-settings dropdown">
       <a class="link-member-menu" data-toggle="dropdown"> 
         <img class="avatar" src="/images/identicon.png">
-        <i class="fa fa-angle-down"></i>
+        <i class="fa fa-sort-asc"></i>
       </a>
       <ul class="dropdown-menu" role="menu">
           <li role="presentation"><a role="menuitem" tabindex="-1" >个人设置</a></li>
@@ -19,9 +19,10 @@
       </ul>
     </li>
   </ul>
-  <form class="navbar-form navbar-right" role="form">
+  <form class="navbar-form" role="form">
     <div class="form-group">
-      <input type="text" placeholder="Email" class="form-control input-sm input-search">
+      <div class="fa fa-search"></div>
+      <input type="text" placeholder="搜索" class="form-control input-sm input-search active">
     </div>
   </form>
   <div class="clearfix"></div>
