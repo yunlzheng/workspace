@@ -42,6 +42,15 @@ angular.module('towerApp')
 
         };
 
+        $scope.newTodo = function(index, todo){
+            var task = $scope.tasks[index];
+            console.log(todo);
+            $http.post('/api/tasks/'+task._id+'/todo/new', todo).success(function(data){
+                task.todos.unshift(data);
+                todo = {};
+            });
+        };
+
         $scope.removeTask = function(index) {
 
             var task = $scope.tasks[index];

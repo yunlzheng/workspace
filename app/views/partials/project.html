@@ -122,28 +122,36 @@
 						</div>
 						<p class="todolist-auto-archive-tip" ng-show="false">恭喜，任务都已完成：）</p>
 						<ul class="todos">
-							<li class="todo"></li>
+							<li class="todo" ng-repeat="todo in task.todos">
+								<div class="todo-wrap">
+									<input type="checkbox" name="todo-done">
+									<span class="todo-content">
+										<a ng-bind="todo.content"></a>
+									</span>
+									<a class="label todo-assign-due no-assign">未指派</a>
+								</div>
+							</li>
 						</ul>
 						<ul class="todo-new-wrap">
 							<li class="todo-form" ng-show="!task.addTodoing">
 								<a type="button" class="" ng-click="toggkeTodoView($index)">添加新任务</a>
 							</li>
 							<li class="todo-form new" ng-show="task.addTodoing">
-								<form class="form">
+								<div  class="form" ng-form="form4">
 									<div class="form-group">
 										<input type="checkbox" disabled="">
-										<textarea class="todo-content" placeholder="新的任务"></textarea>
+										<textarea class="todo-content" placeholder="新的任务" ng-model="_todo.content" required></textarea>
 										<a class="todo-label">
 											<span class="assignee">未指派</span> ·
 											<span class="due">没有截止时间</span>
 										</a>
 									</div>
 									<div class="form-group">
-								          <button type="submit" class="btn btn-success">添加任务</button>
+								          <button type="submit" class="btn btn-success" ng-click="newTodo($index, _todo)" ng-disabled="form4.$invalid">添加任务</button>
 								          <a class="btn" ng-click="toggkeTodoView($index)">取消</a>
 									</div>
 									
-								</form>
+								</div>
 							</li>
 						</ul>
 					</div>
