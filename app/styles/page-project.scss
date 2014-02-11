@@ -180,6 +180,30 @@
 	.todolist {
 		position: relative;
 		margin: 0 0 20px 0;
+		.actions {
+			position: absolute;
+			left: -95px;
+			top: -1px;
+			z-index: 95;
+			width: 100px;
+			display: none;
+			.inr {
+				float: right;
+				padding: 2px 5px 2px 10px;
+				background: rgb(255, 255, 255);
+				border-radius: 10px 0 0 10px;
+				-webkit-box-shadow: -1px 0 1px rgba(0, 0, 0, 0.2);
+				-moz-box-shadow: -1px 0 1px rgba(0,0,0,0.2);
+				box-shadow: -1px 0 1px rgba(0, 0, 0, 0.2);
+				a{
+					color: rgb(167, 192, 185);	
+					font-size:16px;
+					float: right;
+					width: 20px;
+				}
+			}
+			
+		}
 		.todolist-auto-archive-tip {
 	
 			color: rgb(187, 187, 187);
@@ -190,33 +214,6 @@
 			&:hover{
 				.actions {
 					display: block;
-				}
-			}
-			.actions {
-				position: absolute;
-				top: -1px;
-				z-index: 95;
-				width: 100px;
-				display: none;
-				left: -105px;
-				.inr {
-					float: right;
-					padding: 2px 5px 4px 12px;
-					background: rgb(255, 255, 255);
-					border-radius: 10px 0 0 10px;
-					-webkit-box-shadow: -1px 0 1px rgba(0, 0, 0, 0.2);
-					-moz-box-shadow: -1px 0 1px rgba(0,0,0,0.2);
-					box-shadow: -1px 0 1px rgba(0, 0, 0, 0.2);
-				}
-				a{
-					display: inline-block;
-					float: right;
-					width: 22px;
-					height: 18px;
-					overflow: hidden;
-					color: rgb(167, 192, 185);
-					font-weight: bold;
-					font-size:16px;
 				}
 			}
 			h4 {
@@ -234,6 +231,9 @@
 					font-weight: bold;
 				}
 			}
+			.actions {
+				left: -105px;
+			}
 		}
 		ul{
 			list-style: none;
@@ -244,6 +244,11 @@
 			padding: 2px 5px 2px 10px;
 			margin: 0 0 0 -10px;
 			position: relative;
+			&:hover{
+				.actions {
+					display: block;
+				}
+			}
 			.todo-wrap {
 				padding-left: 30px;
 				line-height: 1.6;
