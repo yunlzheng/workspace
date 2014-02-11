@@ -187,11 +187,48 @@
 		}
 		.title {
 			margin-bottom: 10px;
+			&:hover{
+				.actions {
+					display: block;
+				}
+			}
+			.actions {
+				position: absolute;
+				top: -1px;
+				z-index: 95;
+				width: 100px;
+				display: none;
+				left: -105px;
+				.inr {
+					float: right;
+					padding: 2px 5px 4px 12px;
+					background: rgb(255, 255, 255);
+					border-radius: 10px 0 0 10px;
+					-webkit-box-shadow: -1px 0 1px rgba(0, 0, 0, 0.2);
+					-moz-box-shadow: -1px 0 1px rgba(0,0,0,0.2);
+					box-shadow: -1px 0 1px rgba(0, 0, 0, 0.2);
+				}
+				a{
+					display: inline-block;
+					float: right;
+					width: 22px;
+					height: 18px;
+					overflow: hidden;
+					color: rgb(167, 192, 185);
+					font-weight: bold;
+					font-size:16px;
+				}
+			}
 			h4 {
 				margin: 0 0 0 -10px;
-				padding: 0 0 0 10px;
+				padding: 2px 0 0 10px;
 				font-size: 16px;
 				color: rgb(0, 0, 0);
+				line-height: normal;
+				.fa{
+					color: rgb(153, 153, 153);
+					padding-left:4px;
+				}
 				a {
 					color: rgb(0, 0, 0);
 					font-weight: bold;

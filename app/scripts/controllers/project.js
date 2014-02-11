@@ -36,13 +36,21 @@ angular.module('towerApp')
         $scope.newTaskList = function(taskList){
 
             taskList.project = $routeParams.project;
-            console.log(taskList);
             $http.post('/api/projects/'+$routeParams.project+'/tasklist/new', taskList).success(function(data){
                 $scope.tasks.unshift(data);
                 $scope.showNewTaskList = false;
                 $scope.tasklist = {};
             });
 
-        }
+        };
+
+        $scope.removeTaskList = function(index) {
+
+            var tasklist = $scope.tasks[index];
+            $http.delete('/api/tasklists/'+tasklist._id).success(function(data){
+                $scope.tasks.splice(index, 1);
+            });
+           
+        };
 
   }]);

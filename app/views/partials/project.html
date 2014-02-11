@@ -129,8 +129,15 @@
 				<div class="todolists ui-sortable">
 					<div class="todolist" ng-repeat="task in tasks">
 						<div class="title">
+							<div class="todolist-actions actions">
+								<div class="inr">
+									<a title="编辑任务列表"><i class="fa fa-pencil-square-o"></i></a>
+									<a title="删除任务列表" ng-click="removeTaskList($index)"><i class="fa fa-trash-o"></i></a>
+								</div>
+							</div>
 							<h4>
 								<a ng-bind="task.name"></a>
+								<a><i class="fa fa-angle-down"></i></a>
 							</h4>
 						</div>
 						<p class="todolist-auto-archive-tip" ng-show="!task.todos.length">恭喜，任务都已完成：）</p>
