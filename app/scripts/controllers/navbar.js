@@ -8,12 +8,12 @@ angular.module('towerApp')
       'link': '#/'
     },
     {
-      'title': '回顾',
-      'link': '#/progress'
-    },
-    {
       'title': '日历',
       'link': '#/calendars'
+    },
+    {
+      'title': '回顾',
+      'link': '#/progress'
     },
     {
       'title': '团队',

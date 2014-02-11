@@ -169,3 +169,204 @@
 	margin: 20px 0;
 	padding: 12px 50px 10px;
 }
+
+.todos-all .todolists-wrap {
+	float: left;
+}
+
+.todolists {
+	width: 630px;
+	margin: 0 0 0 2px;
+	.todolist {
+		position: relative;
+		margin: 0 0 20px 0;
+		.actions {
+			position: absolute;
+			left: -95px;
+			top: -1px;
+			z-index: 95;
+			width: 100px;
+			display: none;
+			.inr {
+				float: right;
+				padding: 2px 5px 2px 10px;
+				background: rgb(255, 255, 255);
+				border-radius: 10px 0 0 10px;
+				-webkit-box-shadow: -1px 0 1px rgba(0, 0, 0, 0.2);
+				-moz-box-shadow: -1px 0 1px rgba(0,0,0,0.2);
+				box-shadow: -1px 0 1px rgba(0, 0, 0, 0.2);
+				a{
+					color: rgb(167, 192, 185);	
+					font-size:16px;
+					float: right;
+					width: 20px;
+					&:hover{
+						color:rgb(140, 170, 162);
+					}
+				}
+			}
+			
+		}
+		.todolist-auto-archive-tip {
+	
+			color: rgb(187, 187, 187);
+			font-size: 12px;
+		}
+		.title {
+			margin-bottom: 10px;
+			&:hover{
+				.actions {
+					display: block;
+				}
+			}
+			h4 {
+				margin: 0 0 0 -10px;
+				padding: 2px 0 0 10px;
+				font-size: 16px;
+				color: rgb(0, 0, 0);
+				line-height: normal;
+				.fa{
+					color: rgb(153, 153, 153);
+					padding-left:4px;
+				}
+				a {
+					color: rgb(0, 0, 0);
+					font-weight: bold;
+				}
+			}
+			.actions {
+				left: -105px;
+			}
+		}
+		ul{
+			list-style: none;
+			padding: 0;
+		}
+		.todo {
+			font-size: 15px;
+			padding: 2px 5px 2px 10px;
+			margin: 0 0 0 -10px;
+			position: relative;
+			&:hover{
+				.actions {
+					display: block;
+				}
+			}
+			.todo-wrap {
+				padding-left: 30px;
+				line-height: 1.6;
+				input[type="checkbox"] {
+					font-size: 16px;
+					vertical-align: middle;
+					margin: -3px 5px 0 -23px;
+				}
+			}
+			.todo-content {
+				word-wrap: break-word;
+				.raw {
+					display: none !important;
+				}
+				span {
+					display: none;
+				}
+				a {
+					color: rgb(0, 0, 0);
+				}
+			}
+			.label{
+				display: inline-block;
+				position: relative;
+				top: -2px;
+				margin: 0 0 0 5px;
+				padding: 2px 6px 2px;
+				line-height: 1;
+				background: rgb(239, 239, 239);
+				font-size: 12px;
+				color: rgb(153, 153, 153);
+				font-style: normal;
+				vertical-align: middle;
+				white-space: nowrap;
+				word-break: keep-all;
+				word-wrap: normal;
+				-moz-border-radius: 10px;
+				-webkit-border-radius: 10px;
+				border-radius: 10px;
+				&.no-assign {
+					display: inline-block;
+					border: 1px solid rgb(238, 238, 238);
+					padding: 3px 7px 3px;
+					color: rgb(153, 153, 153);
+					background: none;
+				}
+				&.todo-proj {
+					display: none;
+				}
+			}
+		}
+		.todo-new-wrap {
+			margin: 5px 0 0 0;
+			.todo-form {
+				padding: 0 0 0 30px;
+				display: list-item;
+				
+				.btn-new-todo {
+					font-size: 14px;
+					background: none;
+					color: rgb(66, 152, 186);
+					padding-left: 0;
+					padding-right: 0;
+					border: none;
+					box-shadow: none;
+				}
+				input[type="checkbox"] {
+					font-size: 16px;
+					vertical-align: top;
+					margin: 4px 5px 0 -23px;
+				}
+				.todo-content {
+					display: inline-block;
+					width: 420px;
+					line-height: 1.6;
+					font-size: 15px;
+					padding: 0;
+					margin: 0;
+					border: none;
+					border-bottom: 1px dotted rgb(204, 204, 204);
+					vertical-align: top;
+					resize: none;
+					-moz-border-radius: 0px;
+					-webkit-border-radius: 0px;
+					border-radius: 0px;
+					overflow: hidden;
+					word-wrap: break-word;
+					resize: none;
+					height: 24px;
+					outline: none;
+				}
+				.todo-label {
+					display: inline-block;
+					margin: 2px 0 0 5px;
+					padding: 2px 6px 2px;
+					line-height: 1;
+					font-size: 12px;
+					color: rgb(153, 153, 153);
+					border: 1px solid rgb(238, 238, 238);
+					vertical-align: top;
+					font-style: normal;
+					outline: none;
+					white-space: nowrap;
+					word-break: keep-all;
+					word-wrap: normal;
+					-moz-border-radius: 10px;
+					-webkit-border-radius: 10px;
+					border-radius: 10px;
+				}
+				button {
+					font-size: 14px;
+					padding: 5px 8px;
+				}
+			}
+		}
+	}
+}
+
