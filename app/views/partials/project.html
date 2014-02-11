@@ -127,8 +127,8 @@
 								<div class="todo-actions actions">
 									<div class="inr">
 										<a title="标记成正在进行中"><i class="fa fa-play"></i></a>
-										<a title="暂停" style="display:none"><i class="fa fa-pause"></i></a>
-										<a title="编辑"><i class="fa fa-pencil-square-o"></i></a>
+										<a title="暂停" ng-show="todo.run"><i class="fa fa-pause"></i></a>
+										<a title="编辑" ng-show="!todo.run"><i class="fa fa-pencil-square-o"></i></a>
 										<a title="删除"><i class="fa fa-trash-o"></i></a>
 									</div>
 								</div>
