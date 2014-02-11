@@ -38,9 +38,9 @@ angular.module('towerApp')
             taskList.project = $routeParams.project;
             console.log(taskList);
             $http.post('/api/projects/'+$routeParams.project+'/tasklist/new', taskList).success(function(data){
-
-                console.log(data);
-
+                $scope.tasks.unshift(data);
+                $scope.showNewTaskList = false;
+                $scope.tasklist = {};
             });
 
         }
