@@ -3,9 +3,6 @@
 angular.module('towerApp')
   .controller('ProjectCtrl', ['$scope', '$routeParams', '$http' ,function ($scope, $routeParams, $http) {
 
-        $scope.discusses = [];
-        $scope.taskLists = [];
-
         $scope.projectId = $routeParams.project;
 
     	$http.get('/api/projects/'+$routeParams.project).success(function(data){
@@ -21,7 +18,7 @@ angular.module('towerApp')
         });
 
         $scope.showNewDissuss = false;
-        $scope.showNewTaskList = false;
+        $scope.showNewTask = false;
 
     	$scope.newDiscuss = function(discuss){
     		
@@ -33,21 +30,21 @@ angular.module('towerApp')
 
     	};
 
-        $scope.newTaskList = function(taskList){
+        $scope.newTask = function(taskList){
 
             taskList.project = $routeParams.project;
-            $http.post('/api/projects/'+$routeParams.project+'/tasklist/new', taskList).success(function(data){
+            $http.post('/api/projects/'+$routeParams.project+'/tasks/new', taskList).success(function(data){
                 $scope.tasks.unshift(data);
-                $scope.showNewTaskList = false;
+                $scope.showNewTask = false;
                 $scope.tasklist = {};
             });
 
         };
 
-        $scope.removeTaskList = function(index) {
+        $scope.removeTask = function(index) {
 
             var tasklist = $scope.tasks[index];
-            $http.delete('/api/tasklists/'+tasklist._id).success(function(data){
+            $http.delete('/api/tasks/'+tasklist._id).success(function(data){
                 $scope.tasks.splice(index, 1);
             });
            
