@@ -155,6 +155,27 @@
 						<ul class="todos">
 							<li class="todo"></li>
 						</ul>
+						<ul class="todo-new-wrap">
+							<li class="todo-form">
+								<a type="button" class="">添加新任务</a>
+							</li>
+							<li class="todo-form new" style="display: none;">
+								<form class="form">
+									<div class="form-body">
+										<input type="checkbox" disabled="">
+										<textarea class="todo-content" placeholder="新的任务"></textarea>
+										<a class="todo-label">
+											<span class="assignee">未指派</span> ·
+											<span class="due">没有截止时间</span>
+										</a>
+									</div>
+									<div class="buttons create-buttons">
+										<button type="submit" class="btn-create-todo">添加任务</button>
+										<a class="btn-cancel-todo">取消</a>
+									</div>
+								</form>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
