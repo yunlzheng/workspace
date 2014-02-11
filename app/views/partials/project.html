@@ -128,10 +128,10 @@
 			<div class="todolists-wrap">
 				<div class="todolists ui-sortable">
 					<div class="todolist" ng-repeat="task in tasks">
-						<div class="title">
+						<div class="title" ng-show="!task.editing">
 							<div class="todolist-actions actions">
 								<div class="inr">
-									<a title="编辑任务列表"><i class="fa fa-pencil-square-o"></i></a>
+									<a title="编辑任务列表" ng-click="toggleEditTask($index)"><i class="fa fa-pencil-square-o"></i></a>
 									<a title="删除任务列表" ng-click="removeTask($index)"><i class="fa fa-trash-o"></i></a>
 								</div>
 							</div>
@@ -139,6 +139,17 @@
 								<a ng-bind="task.name"></a>
 								<a><i class="fa fa-angle-down"></i></a>
 							</h4>
+						</div>
+						<div class="todolist-form edit" ng-show="task.editing">
+						    <form class="form" name="form3">
+						    	<div class="form-group">
+									<input type="text" class="form-control" ng-model="task.name" placeholder="给任务列表起个名字" required>
+								</div>
+						        <div class="form-group">
+						          <button type="submit" class="btn btn-success" ng-disabled="form3.$invalid" ng-click="updateTask(task)">保存</button>
+						          <a class="btn" ng-click="toggleEditTask($index)">取消</a>
+								</div>
+							</form>
 						</div>
 						<p class="todolist-auto-archive-tip" ng-show="!task.todos.length">恭喜，任务都已完成：）</p>
 						<ul class="todos">

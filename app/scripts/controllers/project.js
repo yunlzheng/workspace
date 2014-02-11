@@ -43,11 +43,29 @@ angular.module('towerApp')
 
         $scope.removeTask = function(index) {
 
-            var tasklist = $scope.tasks[index];
-            $http.delete('/api/tasks/'+tasklist._id).success(function(data){
+            var task = $scope.tasks[index];
+            $http.delete('/api/tasks/'+task._id).success(function(data){
                 $scope.tasks.splice(index, 1);
             });
            
+        };
+
+        $scope.toggleEditTask = function(index) {
+
+            var task = $scope.tasks[index];
+            task.editing = !task.editing;
+
+        };
+
+        $scope.updateTask = function(task) {
+
+            task.editing = !task.editing;
+            $http.put('/api/tasks/'+ task._id, task).success(function(data){
+
+                task = data;
+
+            });
+
         };
 
   }]);
