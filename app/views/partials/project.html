@@ -26,50 +26,19 @@
 				<div class="editor-html editor-wrapper toolbar-enabled">
 					<div class="editor-toolbar" style="top: 0px;">
 						<ul>
-							
-							<li>
-								<a tabindex="-1" unselectable="on" class="toolbar-item bold disable" title="加粗（Ctrl + b）">
-									<span class="fa fa-bold"></span>
-								</a>
-							</li>
-							
-							<li>
-								<a tabindex="-1" unselectable="on" class="toolbar-item underline disable"  title="下划线（Ctrl + u）" >
-									<span class="fa fa-underline"></span>
-								</a>
-							</li>
-							
-							<li>
-								<a tabindex="-1" unselectable="on" class="toolbar-item deleteline disable"  title="删除线">
-									<span class="fa fa-strikethrough"></span>
-								</a>
-							</li>
-							<li>
-								<span class="separator"></span>
-							</li>
-							<li>
-								<a tabindex="-1" unselectable="on" class="toolbar-item ol disable"  title="有序列表">
-									<span class="fa fa-list-ol"></span>
-								</a>
-							</li>
-							<li>
-								<a tabindex="-1" unselectable="on" class="toolbar-item ul disable"  title="无序列表">
-									<span class="fa fa-list-ul"></span>
-								</a>
-							</li>
-							<li>
-								<a tabindex="-1" unselectable="on" class="toolbar-item blockquote disable" title="引用">
-									<span class="fa fa-quote-left"></span>
-								</a>
-							</li>
-							<li>
-								<a tabindex="-1" unselectable="on" class="toolbar-item code disable" title="代码">
-									<span class="fa fa-code"></span>
-								</a>
-							</li>
-							<li>
-								<span class="separator"></span>
-							</li>
+							<li><a tabindex="-1" unselectable="on" class="toolbar-item bold disable" title="加粗（Ctrl + b）"><span class="fa fa-bold"></span></a></li>
+							<li><a tabindex="-1" unselectable="on" class="toolbar-item underline disable"  title="下划线（Ctrl + u）" ><span class="fa fa-underline"></span></a></li>
+							<li><a tabindex="-1" unselectable="on" class="toolbar-item deleteline disable"  title="删除线"><span class="fa fa-strikethrough"></span></a></li>
+							<li><span class="separator"></span></li>
+							<li><a tabindex="-1" unselectable="on" class="toolbar-item ol disable"  title="有序列表">
+									<span class="fa fa-list-ol"></span></a></li>
+							<li><a tabindex="-1" unselectable="on" class="toolbar-item ul disable"  title="无序列表">
+									<span class="fa fa-list-ul"></span></a></li>
+							<li><a tabindex="-1" unselectable="on" class="toolbar-item blockquote disable" title="引用">
+									<span class="fa fa-quote-left"></span></a></li>
+							<li><a tabindex="-1" unselectable="on" class="toolbar-item code disable" title="代码">
+									<span class="fa fa-code"></span></a></li>
+							<li><span class="separator"></span></li>
 						</ul>
 					</div>
 					<div contenteditable class="editor-body" ng-model='discuss.content' strip-br="true" required>
@@ -151,17 +120,17 @@
 								</div>
 							</form>
 						</div>
-						<p class="todolist-auto-archive-tip" ng-show="!task.todos.length">恭喜，任务都已完成：）</p>
+						<p class="todolist-auto-archive-tip" ng-show="false">恭喜，任务都已完成：）</p>
 						<ul class="todos">
 							<li class="todo"></li>
 						</ul>
 						<ul class="todo-new-wrap">
-							<li class="todo-form">
-								<a type="button" class="">添加新任务</a>
+							<li class="todo-form" ng-show="!task.addTodoing">
+								<a type="button" class="" ng-click="toggkeTodoView($index)">添加新任务</a>
 							</li>
-							<li class="todo-form new" style="display: none;">
+							<li class="todo-form new" ng-show="task.addTodoing">
 								<form class="form">
-									<div class="form-body">
+									<div class="form-group">
 										<input type="checkbox" disabled="">
 										<textarea class="todo-content" placeholder="新的任务"></textarea>
 										<a class="todo-label">
@@ -169,10 +138,11 @@
 											<span class="due">没有截止时间</span>
 										</a>
 									</div>
-									<div class="buttons create-buttons">
-										<button type="submit" class="btn-create-todo">添加任务</button>
-										<a class="btn-cancel-todo">取消</a>
+									<div class="form-group">
+								          <button type="submit" class="btn btn-success">添加任务</button>
+								          <a class="btn" ng-click="toggkeTodoView($index)">取消</a>
 									</div>
+									
 								</form>
 							</li>
 						</ul>

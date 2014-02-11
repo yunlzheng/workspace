@@ -34,6 +34,7 @@ angular.module('towerApp')
 
             taskList.project = $routeParams.project;
             $http.post('/api/projects/'+$routeParams.project+'/tasks/new', taskList).success(function(data){
+                data.addTodoing = true;
                 $scope.tasks.unshift(data);
                 $scope.showNewTask = false;
                 $scope.tasklist = {};
@@ -56,6 +57,11 @@ angular.module('towerApp')
             task.editing = !task.editing;
 
         };
+
+        $scope.toggkeTodoView = function(index){
+            var task = $scope.tasks[index];
+            task.addTodoing = !task.addTodoing;
+        }
 
         $scope.updateTask = function(task) {
 
