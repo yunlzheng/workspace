@@ -16,7 +16,8 @@
     "font-awesome": "~4.0.3",
     "angular-ui-bootstrap": "~0.10.0",
     "angular-ui-calendar": "~0.8.0",
-    "angular-contenteditable": "~0.3.6"
+    "angular-contenteditable": "~0.3.6",
+    "angular-dialog-service": "~3.1.0"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",

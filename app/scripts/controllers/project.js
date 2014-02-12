@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('towerApp')
-  .controller('ProjectCtrl', ['$scope', '$routeParams', '$http' ,function ($scope, $routeParams, $http) {
+  .controller('ProjectCtrl', ['$scope', '$routeParams', '$http', '$dialogs',function ($scope, $routeParams, $http, $dialogs) {
 
+       
         $scope.projectId = $routeParams.project;
 
     	$http.get('/api/projects/'+$routeParams.project).success(function(data){
