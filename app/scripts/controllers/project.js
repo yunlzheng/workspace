@@ -61,6 +61,12 @@ angular.module('towerApp')
            
         };
 
+        $scope.removeTodo = function(todo) {
+
+           console.log(todo);
+           
+        };
+
         $scope.toggleEditTask = function(index) {
 
             var task = $scope.tasks[index];
