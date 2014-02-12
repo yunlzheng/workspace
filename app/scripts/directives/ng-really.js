@@ -14,7 +14,6 @@ angular.module('tower.directives',[])
                 dlg.result.then(function(btn){
                   scope.$apply(attrs.ngReallyClick);
                 },function(btn){
-                  //console.log('Shame on you for not thinking this is awesome!');
                 });
             });
         }

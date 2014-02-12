@@ -129,7 +129,7 @@
 										<a title="标记成正在进行中"><i class="fa fa-play"></i></a>
 										<a title="暂停" ng-show="todo.run"><i class="fa fa-pause"></i></a>
 										<a title="编辑" ng-show="!todo.run"><i class="fa fa-pencil-square-o"></i></a>
-										<a title="删除"><i class="fa fa-trash-o"></i></a>
+										<a title="删除" ng-really-message="确认删除任务?" ng-really-click=""><i class="fa fa-trash-o"></i></a>
 									</div>
 								</div>
 								<div class="todo-wrap">
