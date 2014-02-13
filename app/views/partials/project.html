@@ -56,9 +56,9 @@
 		</div>
 		<div class="messages">
 			<div class="message" ng-repeat='discuss in discusses'>
-				<a><img class="avatar" src="/images/identicon.png"></a>
+				<a><img class="avatar" ng-src="{{ discuss.author | avatar}}"></a>
 				<div class="name">
-					<a>Author</a>
+					<a ng-bind="discuss.author.username"></a>
 				</div>
 				<a class="message-link" ng-href="#/projects/{{ projectId }}/messages/{{ discuss._id }}">
 					<span class="message-title">
@@ -101,7 +101,7 @@
 							<div class="todolist-actions actions">
 								<div class="inr">
 									<a title="编辑任务列表" ng-click="toggleEditTask($index)"><i class="fa fa-pencil-square-o"></i></a>
-									<a title="删除任务列表" ng-click="removeTask($index)"><i class="fa fa-trash-o"></i></a>
+									<a title="删除任务列表" ng-really-message="确认删除任务列表?" ng-really-click="removeTask($index)"><i class="fa fa-trash-o"></i></a>
 									<div class="clearfix"></div>
 								</div>
 							</div>
@@ -126,14 +126,22 @@
 							<li class="todo" ng-repeat="todo in task.todos">
 								<div class="todo-actions actions">
 									<div class="inr">
-										<a title="标记成正在进行中"><i class="fa fa-play"></i></a>
-										<a title="暂停" ng-show="todo.run"><i class="fa fa-pause"></i></a>
-										<a title="编辑" ng-show="!todo.run"><i class="fa fa-pencil-square-o"></i></a>
-										<a title="删除"><i class="fa fa-trash-o"></i></a>
+										<a title="标记成正在进行中" ng-if="!todo.run" ng-click="runTodo(task, $index)">
+											<i class="fa fa-play"></i>
+										</a>
+										<a title="暂停" ng-if="todo.run" ng-click="stopTodo(task, $index)">
+											<i class="fa fa-pause"></i>
+										</a>
+										<a title="编辑" >
+											<i class="fa fa-pencil-square-o"></i>
+										</a>
+										<a title="删除" ng-really-message="确认删除任务?" ng-really-click="removeTodo(task, $index)">
+											<i class="fa fa-trash-o"></i>
+										</a>
 									</div>
 								</div>
 								<div class="todo-wrap">
-									<input type="checkbox" name="todo-done">
+									<input type="checkbox" name="todo-done" ng-model='todo.completed' ng-change='updateTodo(task, $index)'>
 									<span class="todo-content">
 										<a ng-bind="todo.content"></a>
 									</span>

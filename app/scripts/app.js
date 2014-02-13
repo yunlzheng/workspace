@@ -6,9 +6,11 @@ angular.module('towerApp', [
   'ngSanitize',
   'ngRoute',
   'contenteditable',
+  'tower.directives',
   'tower.resources',
   'ui.bootstrap.modal',
-  'ui.calendar'
+  'ui.calendar',
+  'dialogs'
 ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

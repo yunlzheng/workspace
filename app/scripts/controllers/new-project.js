@@ -2,7 +2,7 @@
 
 angular.module('towerApp')
   .controller('NewProjectCtrl', ['$scope', '$routeParams', '$http', '$location','Project', function ($scope, $routeParams, $http, $location, Project) {
-      
+
       $scope.newProject = function(project){
 
       	project.term = $routeParams.term;
