@@ -46,9 +46,9 @@ angular.module('towerApp')
 
         $scope.newTodo = function(index, todo){
             var task = $scope.tasks[index];
-            $http.post('/api/tasks/'+task._id+'/todo/new', todo).success(function(data){
+            $http.post('/api/tasks/'+task._id+'/todos/new', todo).success(function(data){
                 task.todos.push(data);
-                $scope._todo = {};
+                todo = {};
             });
         };
 
@@ -61,9 +61,10 @@ angular.module('towerApp')
            
         };
 
-        $scope.removeTodo = function(todo) {
-
-           console.log(todo);
+        $scope.removeTodo = function(task, index) {
+           $http.delete('/api/tasks/'+task._id+'/todos/'+task.todos[index]._id).success(function(){
+                task.todos.splice(index, 1);
+           });
            
         };
 
