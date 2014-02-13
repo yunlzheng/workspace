@@ -52,6 +52,32 @@ angular.module('towerApp')
             });
         };
 
+        $scope.updateTodo = function(task, index) {
+
+            var todo = task.todos[index];
+            $http.put('/api/tasks/'+task._id+'/todos/'+todo._id, todo);
+
+        };
+
+        $scope.runTodo = function(task, index) {
+            var todo = task.todos[index];
+            todo.run = true;
+            $http.put('/api/tasks/'+task._id+'/todos/'+todo._id, todo);
+        };
+
+        $scope.stopTodo = function(task, index) {
+            var todo = task.todos[index];
+            todo.run = false;
+            $http.put('/api/tasks/'+task._id+'/todos/'+todo._id, todo);
+        };
+
+        $scope.removeTodo = function(task, index) {
+           $http.delete('/api/tasks/'+task._id+'/todos/'+task.todos[index]._id).success(function(){
+                task.todos.splice(index, 1);
+           });
+           
+        };
+
         $scope.removeTask = function(index) {
 
             var task = $scope.tasks[index];
@@ -61,12 +87,7 @@ angular.module('towerApp')
            
         };
 
-        $scope.removeTodo = function(task, index) {
-           $http.delete('/api/tasks/'+task._id+'/todos/'+task.todos[index]._id).success(function(){
-                task.todos.splice(index, 1);
-           });
-           
-        };
+
 
         $scope.toggleEditTask = function(index) {
 
