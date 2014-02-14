@@ -142,6 +142,9 @@
 								</div>
 								<div class="todo-wrap">
 									<input type="checkbox" name="todo-done" ng-model='todo.completed' ng-change='updateTodo(task, $index)'>
+									<span class="runner" ng-class="{on: todo.run, off: !todo.run}">
+										<img class="avatar" src="/images/identicon.png">
+									</span>
 									<span class="todo-content">
 										<a ng-bind="todo.content"></a>
 									</span>

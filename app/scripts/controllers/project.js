@@ -62,13 +62,13 @@ angular.module('towerApp')
         $scope.runTodo = function(task, index) {
             var todo = task.todos[index];
             todo.run = true;
-            $http.put('/api/tasks/'+task._id+'/todos/'+todo._id, todo);
+            $http.put('/api/tasks/'+task._id+'/todos/'+todo._id+'/start');
         };
 
         $scope.stopTodo = function(task, index) {
             var todo = task.todos[index];
             todo.run = false;
-            $http.put('/api/tasks/'+task._id+'/todos/'+todo._id, todo);
+            $http.put('/api/tasks/'+task._id+'/todos/'+todo._id+'/stop');
         };
 
         $scope.removeTodo = function(task, index) {
@@ -86,8 +86,6 @@ angular.module('towerApp')
             });
            
         };
-
-
 
         $scope.toggleEditTask = function(index) {
 
