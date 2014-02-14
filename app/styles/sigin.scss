@@ -18,11 +18,29 @@ body {
 }
 
 .form-signin {
-  max-width: 330px;
+  max-width: 430px;
   padding: 15px;
   margin: 0 auto;
-  padding-top: 100px;
+  padding-top: 150px;
   position:releation;
+  .login-pane{
+    width: 199px;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgb(255, 255, 255);
+    a{
+      width: 96px;
+      display: block;
+      margin: 0 auto;
+    }
+    &.left{
+      float: left;
+    }
+    &.right{
+      float: right;
+    }
+  }
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
