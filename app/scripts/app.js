@@ -30,6 +30,10 @@ angular.module('towerApp', [
         templateUrl: 'partials/project',
         controller: 'ProjectCtrl'
       })
+      .when('/projects/:project/settings', {
+        templateUrl: 'partials/project-settings',
+        controller: 'ProjectSettingCtrl'
+      })
       .when('/projects/:project/messages/:message', {
         templateUrl: 'partials/message',
         controller:'MessageCtrl'
