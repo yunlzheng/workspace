@@ -5,13 +5,14 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'editor';
 @import 'page-terms';
-@import 'page-lauchpad';
+@import 'page-lauchpad';    
 @import 'page-calendar';
 @import 'page-new-project';
 @import 'page-new-doc';
 @import 'page-project';
 @import 'page-message';
 @import 'page-project-settings';
+@import 'page-members';
 
 
 .browsehappy {

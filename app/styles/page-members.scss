@@ -1,0 +1,90 @@
+#page-members{ 
+    &.page{
+        .group {
+            position: relative;
+        }
+        .members {
+            min-height: 80px;
+            margin-bottom: 30px;
+            padding-left: 5px;
+            border: 1px dashed rgba(0, 0, 0, 0);
+            z-index: 0;
+            overflow: hidden;
+            .member {
+                float: left;
+                margin: 6px 8px 5px 0;
+            }
+            .member-invite{ 
+                .name {
+                    color: rgb(156, 176, 115);
+                    font-size: 14px;
+                    line-height: 42px;
+                    height: 42px;
+                    padding: 0;
+                    display: block;
+                    margin: 0 0 0 52px;
+                    width: 88px;
+                    font-size: 14px;
+                    text-align: left;
+                }
+            }
+            .member-link {
+                display: block;
+                float: left;
+                cursor: pointer;
+                color: rgb(51, 51, 51);
+                text-align: center;
+                padding: 8px 0 9px 8px;
+                -moz-border-radius: 4px;
+                -webkit-border-radius: 4px;
+                border-radius: 4px;
+                &:hover{
+                    .avatar {
+                        -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+                        -moz-box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+                    }
+                }
+                &.owner {
+                    .role {
+                        color: rgb(246, 133, 57);
+                    }
+                }
+                .role {
+                    font-size: 12px;
+                    line-height: 1;
+                    color: rgb(153, 153, 153);
+                    margin-top: 2px;
+                    display: block;
+                    margin: 0 0 0 52px;
+                    width: 88px;
+                    font-size: 14px;
+                    text-align: left;
+                }
+                .avatar {
+                    width: 42px;
+                    height: 42px;
+                    float: left;
+                    -moz-border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    border-radius: 50%;
+                    -webkit-transition: box-shadow 200ms ease-in-out;
+                    -moz-transition: box-shadow 200ms ease-in-out;
+                    transition: box-shadow 200ms ease-in-out;
+                    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+                    -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.15);
+                    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+                }
+                .name{
+                    display: block;
+                    margin: 0 0 0 52px;
+                    width: 88px;
+                    font-size: 14px;
+                    text-align: left;
+                    padding-top: 2px;
+                }
+            }
+        }
+    }
+    
+}
