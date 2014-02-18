@@ -187,6 +187,7 @@ angular.module('tower.directives.tooltip', ['ngAnimate', 'mgcrea.ngStrap.helpers
           if(options.type) tipElement.addClass(options.prefixClass + '-' + options.type);
 
           $animate.enter(tipElement, parent, after, function() {});
+
           scope.$isShown = true;
           scope.$$phase || scope.$digest();
           $$animateReflow($tooltip.$applyPlacement);
