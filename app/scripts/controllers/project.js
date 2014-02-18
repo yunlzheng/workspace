@@ -1,58 +1,52 @@
 'use strict';
 
 angular.module('towerApp')
-  .controller('ProjectCtrl', ['$scope', '$routeParams', '$http', '$dialogs',function ($scope, $routeParams, $http, $dialogs) {
+  .controller('ProjectCtrl', ['$scope', '$routeParams', '$dialogs', 'Project', function ($scope, $routeParams, $dialogs, Project) {
 
        
         $scope.projectId = $routeParams.project;
 
-    	$http.get('/api/projects/'+$routeParams.project).success(function(data){
-    		$scope.project = data;
-    	});
+        $scope.project = Project.get({id: $routeParams.project});
 
         $scope.popover = {
           "content": "指派任务"
         };
 
   }])
-  .controller('SubDiscussCtrl', ['$scope', '$routeParams', '$http', '$dialogs',function ($scope, $routeParams, $http, $dialogs) {
+  .controller('SubDiscussCtrl', ['$scope', '$routeParams', '$dialogs','Project',function ($scope, $routeParams, $dialogs, Project) {
 
     $scope.showNewDissuss = false;
-    $http.get('/api/projects/'+$routeParams.project+'/discuss').success(function(data){
-            $scope.discusses = data;
-    });
+    
+    $scope.discusses = Project.discuss({id: $routeParams.project}); 
+    
+
     $scope.newDiscuss = function(discuss){
-            
-        $http.post('/api/projects/'+$routeParams.project+'/discuss/new', discuss).success(function(data){
-            $scope.discusses.unshift(data);
-            $scope.showNewDissuss = false;
-            $scope.discuss = {};
-        });
+        
+        var data = Project.newDiscuss({id: $routeParams.project}, discuss);
+        $scope.discusses.unshift(data);
+        $scope.showNewDissuss = false;
+        $scope.discuss = {};
 
     };
 
   }])
-  .controller('SubTasksCtrl', ['$scope', '$routeParams', '$http', '$dialogs',function ($scope, $routeParams, $http, $dialogs) {
+  .controller('SubTasksCtrl', ['$scope', '$routeParams', '$http', '$dialogs', 'Project', function ($scope, $routeParams, $http, $dialogs, Project) {
 
     $scope.showNewTask = false;
 
-    $http.get('/api/projects/'+$routeParams.project+'/tasks').success(function(data){
-            $scope.tasks = data;
-    });  
+    $scope.tasks = Project.tasks({id: $routeParams.project});
 
-    $http.get('/api/projects/'+$routeParams.project+'/tasks/completed').success(function(data){
-        $scope.completedTodos = data;
-    });
+    $scope.completedTodos = Project.completedTasks({id: $routeParams.project});
+
 
     $scope.newTask = function(taskList){
 
         taskList.project = $routeParams.project;
-        $http.post('/api/projects/'+$routeParams.project+'/tasks/new', taskList).success(function(data){
-            data.addTodoing = true;
-            $scope.tasks.unshift(data);
-            $scope.showNewTask = false;
-            $scope.tasklist = {};
-        });
+        var data = Project.newTask({id: $routeParams.project}, taskList);
+        data.addTodoing = true;
+        $scope.tasks.unshift(data);
+        $scope.showNewTask = false;
+        $scope.tasklist = {};
 
     };
 
