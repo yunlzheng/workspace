@@ -10,6 +10,10 @@ angular.module('towerApp')
     		$scope.project = data;
     	});
 
+        $scope.popover = {
+          "content": "指派任务"
+        };
+
   }])
   .controller('SubDiscussCtrl', ['$scope', '$routeParams', '$http', '$dialogs',function ($scope, $routeParams, $http, $dialogs) {
 

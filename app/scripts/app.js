@@ -7,6 +7,8 @@ angular.module('towerApp', [
   'ngRoute',
   'contenteditable',
   'tower.directives',
+  'tower.directives.tooltip',
+  'tower.directives.popover',
   'tower.resources',
   'ui.bootstrap.modal',
   'ui.calendar',
