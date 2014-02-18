@@ -1,7 +1,31 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div class="page sheet-root" id="page-member">
+<div class="page sheet-root" id="page-members">
   <h2>相比到达的地方，同行的人更重要</h2>
+  <div class="group group-default ui-droppable">
+    <ul class="members">
+        <li class="member member-invite">
+            <a href="/invite/" class="member-link new">
+                <img class="avatar" src="/images/new-member.png" alt="邀请新成员">
+                <span class="name">邀请新成员</span>
+            </a>
+        </li>
+        <li class="member ui-draggable">
+            <a class="member-link owner" >
+                <img class="avatar" src="/images/identicon.png">
+                <span class="name">yunl.zheng</span>
+                <span class="role">账号拥有者</span>
+            </a>
+        </li>
+        <li class="member ui-draggable" >
+            <a class="member-link admin" >
+                <img class="avatar" src="/images/identicon.png">
+                <span class="name">Jeffy</span>
+                <span class="role">管理员</span>
+            </a>
+        </li>
+    </ul>
+  </div>
 </div>
 
 <div class="footer">

@@ -36,25 +36,15 @@
     <div class="container container-signin">
 
       <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <label class="checkbox pull-left">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <label class="checkbox pull-right">
-            Login with other:
-            <a href="/auth/github"><i class="fa fa-github fa-2"></i></a>
-            <a href="/auth/google"><i class="fa fa-google-plus fa-2"></i></a>
-        </label>
+        <div class="login-pane left">
+            <a href="/auth/github"><img src="/images/login_github.png"/></a>
+        </div>
+        <div class="login-pane right">
+            <a href="/auth/google"><img src="/images/login_google.png"></a>
+        </div>
+        <div class="clearfix"></div>
       </form>
 
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    </div> 
   </body>
 </html>

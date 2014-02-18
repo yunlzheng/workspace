@@ -7,6 +7,8 @@ angular.module('towerApp', [
   'ngRoute',
   'contenteditable',
   'tower.directives',
+  'tower.directives.tooltip',
+  'tower.directives.popover',
   'tower.resources',
   'ui.bootstrap.modal',
   'ui.calendar',
@@ -29,6 +31,10 @@ angular.module('towerApp', [
       .when('/projects/:project', {
         templateUrl: 'partials/project',
         controller: 'ProjectCtrl'
+      })
+      .when('/projects/:project/settings', {
+        templateUrl: 'partials/project-settings',
+        controller: 'ProjectSettingCtrl'
       })
       .when('/projects/:project/messages/:message', {
         templateUrl: 'partials/message',

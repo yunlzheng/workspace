@@ -9,11 +9,11 @@
 	</div>
 	<div class="project-links">
 		<a class="link-admin link-admin-members" title="成员管理" ><i class="fa fa-users"></i>成员</a>
-		<a class="link-admin link-admin-settings" title="项目设置"><i class="fa fa-cog"></i>设置</a>
+		<a class="link-admin link-admin-settings" title="项目设置" ng-href="#/projects/{{ project._id }}/settings"><i class="fa fa-cog"></i>设置</a>
 		<a class="link-admin link-recap" title="查看项目的每日进展"><i class="fa fa-align-left"></i>进展</a>
 		<a class="link-admin link-stat" title="项目数据统计" ><i class="fa fa-bar-chart-o"></i>统计</a>
 	</div>
-	<div class="section-messages">
+	<div class="section-messages" ng-controller="SubDiscussCtrl">
 		<h3 class="topics-head">
 			<a class="title">讨论</a>
 			<a class="btn btn-border btn-sm btn-new-discussion" ng-click="showNewDissuss=!showNewDissuss">发起新的讨论</a>
@@ -76,7 +76,7 @@
 		</div>
 	</div>
 
-	<div class="section-tasks">
+	<div class="section-tasks" ng-controller="SubTasksCtrl">
 		<h3>
 			<a class="title">任务</a>
 			<a class="btn btn-border btn-sm btn-new-todolist" ng-click="showNewTask=!showNewTask">添加任务列表</a>
@@ -101,7 +101,7 @@
 							<div class="todolist-actions actions">
 								<div class="inr">
 									<a title="编辑任务列表" ng-click="toggleEditTask($index)"><i class="fa fa-pencil-square-o"></i></a>
-									<a title="删除任务列表" ng-really-message="确认删除任务列表?" ng-really-click="removeTask($index)"><i class="fa fa-trash-o"></i></a>
+									<a title="删除任务列表" ng-really-message="确认删除任务列表?" ng-really-click="removeTask(task)"><i class="fa fa-trash-o"></i></a>
 									<div class="clearfix"></div>
 								</div>
 							</div>
@@ -123,29 +123,32 @@
 						</div>
 						<p class="todolist-auto-archive-tip" ng-show="false">恭喜，任务都已完成：）</p>
 						<ul class="todos">
-							<li class="todo" ng-repeat="todo in task.todos">
+							<li class="todo" ng-repeat="todo in task.todos | unCompleted">
 								<div class="todo-actions actions">
 									<div class="inr">
-										<a title="标记成正在进行中" ng-if="!todo.run" ng-click="runTodo(task, $index)">
+										<a title="标记成正在进行中" ng-if="!todo.run" ng-click="runTodo(task, todo)">
 											<i class="fa fa-play"></i>
 										</a>
-										<a title="暂停" ng-if="todo.run" ng-click="stopTodo(task, $index)">
+										<a title="暂停" ng-if="todo.run" ng-click="stopTodo(task, todo)">
 											<i class="fa fa-pause"></i>
 										</a>
 										<a title="编辑" >
 											<i class="fa fa-pencil-square-o"></i>
 										</a>
-										<a title="删除" ng-really-message="确认删除任务?" ng-really-click="removeTodo(task, $index)">
+										<a title="删除" ng-really-message="确认删除任务?" ng-really-click="removeTodo(task, todo)">
 											<i class="fa fa-trash-o"></i>
 										</a>
 									</div>
 								</div>
 								<div class="todo-wrap">
-									<input type="checkbox" name="todo-done" ng-model='todo.completed' ng-change='updateTodo(task, $index)'>
+									<input type="checkbox" name="todo-done" ng-model='todo.completed' ng-change='updateTodo(task, todo)'>
+									<span class="runner" ng-class="{on: todo.run, off: !todo.run}">
+										<img class="avatar" src="/images/identicon.png">
+									</span>
 									<span class="todo-content">
 										<a ng-bind="todo.content"></a>
 									</span>
-									<a class="label todo-assign-due no-assign">未指派</a>
+									<a class="label todo-assign-due no-assign" data-placement="right" data-animation="am-flip-x" bs-popover="popover">未指派</a>
 								</div>
 							</li>
 						</ul>
@@ -172,6 +175,15 @@
 							</li>
 						</ul>
 					</div>
+				</div>
+			</div>
+			<div class="todolists-completed-wrap" ng-if="completedTodos.length!=0">
+				<div class="todolists-completed">
+					<h5>已完成列表 : </h5>
+					<a ng-href="#/projects/{{project._id}}/todos/{{ completedTodos[0]._id }}" ng-bind="completedTodos[0].content"></a>
+				</div>
+				<div class="todo-history-link">
+					<a ng-href="#/projects/{{project._id}}/todos/completed">所有已完成任务</a>
 				</div>
 			</div>
 		</div>
