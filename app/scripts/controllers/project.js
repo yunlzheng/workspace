@@ -19,9 +19,11 @@ angular.module('towerApp')
     
     $scope.discusses = Project.discuss({id: $routeParams.project}); 
     
-
     $scope.newDiscuss = function(discuss){
         
+        if(!discuss.content){
+            discuss.content = 'RT.';
+        }
         var data = Project.newDiscuss({id: $routeParams.project}, discuss);
         $scope.discusses.unshift(data);
         $scope.showNewDissuss = false;
