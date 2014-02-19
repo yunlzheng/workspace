@@ -6,7 +6,7 @@
  * License: MIT
  */
 angular.module("ui.bootstrap", ["ui.bootstrap.tpls", "ui.bootstrap.transition","ui.bootstrap.collapse","ui.bootstrap.accordion","ui.bootstrap.alert","ui.bootstrap.bindHtml","ui.bootstrap.buttons","ui.bootstrap.carousel","ui.bootstrap.position","ui.bootstrap.datepicker","ui.bootstrap.dropdownToggle","ui.bootstrap.modal","ui.bootstrap.pagination","ui.bootstrap.tooltip","ui.bootstrap.popover","ui.bootstrap.progressbar","ui.bootstrap.rating","ui.bootstrap.tabs","ui.bootstrap.timepicker","ui.bootstrap.typeahead"]);
-angular.module("ui.bootstrap.tpls", ["template/accordion/accordion-group.html","template/accordion/accordion.html","template/alert/alert.html","template/carousel/carousel.html","template/carousel/slide.html","template/datepicker/datepicker.html","template/datepicker/popup.html","/bower_components/angular-ui-bootstrap/template/modal/backdrop.html","/bower_components/angular-ui-bootstrap/template/modal/window.html","template/pagination/pager.html","template/pagination/pagination.html","template/tooltip/tooltip-html-unsafe-popup.html","template/tooltip/tooltip-popup.html","template/popover/popover.html","template/progressbar/bar.html","template/progressbar/progress.html","template/progressbar/progressbar.html","template/rating/rating.html","template/tabs/tab.html","template/tabs/tabset.html","template/timepicker/timepicker.html","template/typeahead/typeahead-match.html","template/typeahead/typeahead-popup.html"]);
+angular.module("ui.bootstrap.tpls", ["template/accordion/accordion-group.html","template/accordion/accordion.html","template/alert/alert.html","template/carousel/carousel.html","template/carousel/slide.html","/bower_components/angular-ui-bootstrap/template/datepicker/datepicker.html","/bower_components/angular-ui-bootstrap/template/datepicker/popup.html","/bower_components/angular-ui-bootstrap/template/modal/backdrop.html","/bower_components/angular-ui-bootstrap/template/modal/window.html","template/pagination/pager.html","template/pagination/pagination.html","template/tooltip/tooltip-html-unsafe-popup.html","template/tooltip/tooltip-popup.html","template/popover/popover.html","template/progressbar/bar.html","template/progressbar/progress.html","template/progressbar/progressbar.html","template/rating/rating.html","template/tabs/tab.html","template/tabs/tabset.html","template/timepicker/timepicker.html","/bower_components/angular-ui-bootstrap/template/typeahead/typeahead-match.html","/bower_components/angular-ui-bootstrap/template/typeahead/typeahead-popup.html"]);
 angular.module('ui.bootstrap.transition', [])
 
 /**
@@ -964,7 +964,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.position'])
   return {
     restrict: 'EA',
     replace: true,
-    templateUrl: 'template/datepicker/datepicker.html',
+    templateUrl: '/bower_components/angular-ui-bootstrap/template/datepicker/datepicker.html',
     scope: {
       dateDisabled: '&'
     },
@@ -1301,7 +1301,7 @@ function ($compile, $parse, $document, $position, dateFilter, datepickerPopupCon
     restrict:'EA',
     replace: true,
     transclude: true,
-    templateUrl: 'template/datepicker/popup.html',
+    templateUrl: '/bower_components/angular-ui-bootstrap/template/datepicker/popup.html',
     link:function (scope, element, attrs) {
       element.bind('click', function(event) {
         event.preventDefault();
@@ -3375,7 +3375,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position', 'ui.bootstrap
         select:'&'
       },
       replace:true,
-      templateUrl:'template/typeahead/typeahead-popup.html',
+      templateUrl:'/bower_components/angular-ui-bootstrap/template/typeahead/typeahead-popup.html',
       link:function (scope, element, attrs) {
 
         scope.templateUrl = attrs.templateUrl;
@@ -3408,7 +3408,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position', 'ui.bootstrap
         query:'='
       },
       link:function (scope, element, attrs) {
-        var tplUrl = $parse(attrs.templateUrl)(scope.$parent) || 'template/typeahead/typeahead-match.html';
+        var tplUrl = $parse(attrs.templateUrl)(scope.$parent) || '/bower_components/angular-ui-bootstrap/template/typeahead/typeahead-match.html';
         $http.get(tplUrl, {cache: $templateCache}).success(function(tplContent){
            element.replaceWith($compile(tplContent.trim())(scope));
         });
@@ -3479,8 +3479,8 @@ angular.module("template/carousel/slide.html", []).run(["$templateCache", functi
     "");
 }]);
 
-angular.module("template/datepicker/datepicker.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("template/datepicker/datepicker.html",
+angular.module("/bower_components/angular-ui-bootstrap/template/datepicker/datepicker.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("/bower_components/angular-ui-bootstrap/template/datepicker/datepicker.html",
     "<table>\n" +
     "  <thead>\n" +
     "    <tr>\n" +
@@ -3505,8 +3505,8 @@ angular.module("template/datepicker/datepicker.html", []).run(["$templateCache",
     "");
 }]);
 
-angular.module("template/datepicker/popup.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("template/datepicker/popup.html",
+angular.module("/bower_components/angular-ui-bootstrap/template/datepicker/popup.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("/bower_components/angular-ui-bootstrap/template/datepicker/popup.html",
     "<ul class=\"dropdown-menu\" ng-style=\"{display: (isOpen && 'block') || 'none', top: position.top+'px', left: position.left+'px'}\">\n" +
     " <li ng-transclude></li>\n" +
     " <li ng-show=\"showButtonBar\" style=\"padding:10px 9px 2px\">\n" +
@@ -3662,13 +3662,13 @@ angular.module("template/timepicker/timepicker.html", []).run(["$templateCache",
     "");
 }]);
 
-angular.module("template/typeahead/typeahead-match.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("template/typeahead/typeahead-match.html",
+angular.module("/bower_components/angular-ui-bootstrap/template/typeahead/typeahead-match.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("/bower_components/angular-ui-bootstrap/template/typeahead/typeahead-match.html",
     "<a tabindex=\"-1\" bind-html-unsafe=\"match.label | typeaheadHighlight:query\"></a>");
 }]);
 
-angular.module("template/typeahead/typeahead-popup.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("template/typeahead/typeahead-popup.html",
+angular.module("/bower_components/angular-ui-bootstrap/template/typeahead/typeahead-popup.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("/bower_components/angular-ui-bootstrap/template/typeahead/typeahead-popup.html",
     "<ul class=\"dropdown-menu\" ng-style=\"{display: isOpen()&&'block' || 'none', top: position.top+'px', left: position.left+'px'}\">\n" +
     "    <li ng-repeat=\"match in matches\" ng-class=\"{active: isActive($index) }\" ng-mouseenter=\"selectActive($index)\" ng-click=\"selectMatch($index)\">\n" +
     "        <div typeahead-match index=\"$index\" match=\"match\" query=\"query\" template-url=\"templateUrl\"></div>\n" +

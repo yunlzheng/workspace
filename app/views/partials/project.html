@@ -101,7 +101,7 @@
 							<div class="todolist-actions actions">
 								<div class="inr">
 									<a title="编辑任务列表" ng-click="toggleEditTask($index)"><i class="fa fa-pencil-square-o"></i></a>
-									<a title="删除任务列表" ng-really-message="确认删除任务列表?" ng-really-click="removeTask(task)"><i class="fa fa-trash-o"></i></a>
+									<a title="删除任务列表" ng-really-message="确认删除任务列表?" ng-really-click="removeTask($index)"><i class="fa fa-trash-o"></i></a>
 									<div class="clearfix"></div>
 								</div>
 							</div>
@@ -148,12 +148,12 @@
 									<span class="todo-content">
 										<a ng-bind="todo.content"></a>
 									</span>
-									<a class="label todo-assign-due no-assign" data-placement="right" data-animation="am-flip-x" bs-popover="popover">未指派</a>
+									<a class="label todo-assign-due no-assign" data-placement="right" data-animation="am-flip-x" bs-popover data-template="partials/todo-assign.html">未指派</a>
 								</div>
 							</li>
 						</ul>
 						<ul class="todo-new-wrap">
-							<li class="todo-form" ng-show="!task.addTodoing">
+							<li class="todo-form {{ task.addTodoing }}" ng-show="!task.addTodoing">
 								<a type="button" class="" ng-click="toggkeTodoView($index)">添加新任务</a>
 							</li>
 							<li class="todo-form new" ng-show="task.addTodoing">
@@ -161,9 +161,8 @@
 									<div class="form-group">
 										<input type="checkbox" disabled="">
 										<textarea class="todo-content" placeholder="新的任务" ng-model="_todo.content" required></textarea>
-										<a class="todo-label">
-											<span class="assignee">未指派</span> ·
-											<span class="due">没有截止时间</span>
+										<a class="todo-label" data-placement="right" data-animation="am-flip-x" bs-popover data-template="partials/todo-assign.html">
+											<span class="assignee">未指派, 没有截止时间</span>
 										</a>
 									</div>
 									<div class="form-group">

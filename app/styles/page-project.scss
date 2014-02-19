@@ -94,6 +94,44 @@
 				}
 			}
 		}
+
+		.todo-popover{
+
+			.select-result {
+				width: 154px;
+				height: auto;
+				padding: 5px 6px;
+				line-height: 14px;
+				font-size: 12px;
+				-moz-border-radius: 4px;
+				-webkit-border-radius: 4px;
+				border-radius: 4px;
+			}
+
+			.txt-due-date {
+				width: 154px;
+				height: auto;
+				padding: 5px 6px;
+				line-height: 14px;
+				font-size: 12px;
+				-moz-border-radius: 4px;
+				-webkit-border-radius: 4px;
+				border-radius: 4px;
+			}
+
+		}
+
+		.popover .todo-popover h3 {
+			font-size: 12px;
+			color: rgb(0, 0, 0);
+			line-height: 1;
+			padding: 5px 0 5px 0;
+			margin: 0px;
+			border-bottom: 1px solid rgb(221, 221, 221);
+			font-weight: bold;
+			border-bottom: none;
+		}
+
 	}
 }
 
@@ -442,4 +480,5 @@
 		}
 	}
 }
+
 
