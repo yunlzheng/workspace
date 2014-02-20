@@ -20,7 +20,7 @@ angular.module('tower.directives.tooltip', ['ngAnimate', 'mgcrea.ngStrap.helpers
       delay: 0
     };
 
-    this.$get = function($window, $rootScope, $compile, $q, $templateCache, $http, $animate, $timeout, dimensions, $$animateReflow) {
+    this.$get = function($window, $document, $rootScope, $compile, $q, $templateCache, $http, $animate, $timeout, dimensions, $$animateReflow) {
 
       var trim = String.prototype.trim;
       var isTouch = 'createTouch' in $window.document;
@@ -87,6 +87,15 @@ angular.module('tower.directives.tooltip', ['ngAnimate', 'mgcrea.ngStrap.helpers
           $tooltip.init();
         });
 
+        var documentClickBind = function(event) {
+
+          if (scope.$isShown && event.target !== element[0] && tipElement && tipElement.find(event.target).length===0) {
+            scope.$apply(function() {
+              scope.$hide();
+            });
+          }
+        };
+
         $tooltip.init = function() {
 
           // Options: delay
@@ -112,12 +121,15 @@ angular.module('tower.directives.tooltip', ['ngAnimate', 'mgcrea.ngStrap.helpers
           // Options: trigger
           var triggers = options.trigger.split(' ');
           angular.forEach(triggers, function(trigger) {
+            
             if(trigger === 'click') {
-              element.on('click', $tooltip.toggle);
+              element.on('click', $tooltip.enter);
             } else if(trigger !== 'manual') {
               element.on(trigger === 'hover' ? 'mouseenter' : 'focus', $tooltip.enter);
               element.on(trigger === 'hover' ? 'mouseleave' : 'blur', $tooltip.leave);
             }
+            $document.bind('click', documentClickBind);
+
           });
 
           // Options: show
@@ -141,6 +153,8 @@ angular.module('tower.directives.tooltip', ['ngAnimate', 'mgcrea.ngStrap.helpers
               element.off(trigger === 'hover' ? 'mouseenter' : 'focus', $tooltip.enter);
               element.off(trigger === 'hover' ? 'mouseleave' : 'blur', $tooltip.leave);
             }
+
+
           }
 
           // Remove element
