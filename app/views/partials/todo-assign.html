@@ -4,10 +4,10 @@
   <div class="popover-content todo-popover">
     <form name="popoverForm" class="ng-pristine ng-valid">
       <h3>将任务指派给：</h3>
-      <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control txt-assignee select-result">
+      <input type="text" ng-model="todo.assignee" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control txt-assignee select-result">
       <h3>任务截止时间：</h3>
       <p class="input-group">
-        <input type="text" class="form-control txt-due-date" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" data-is-open='false'/>
+        <input type="text" ng-model="todo.due_at" class="form-control txt-due-date" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" data-is-open='false'/>
       </p>
     </form>
   </div>

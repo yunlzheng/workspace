@@ -148,7 +148,13 @@
 									<span class="todo-content">
 										<a ng-bind="todo.content"></a>
 									</span>
-									<a class="label todo-assign-due no-assign" data-placement="right" data-animation="am-flip-x" tower-popover data-template="partials/todo-assign.html">未指派</a>
+									<a ng-if='todo.due_at' class="label todo-assign-due no-assign" data-placement="right" data-animation="am-flip-x" tower-popover='todo' data-template="partials/todo-assign.html">
+										{{ todo.assignee }} {{ todo.due_at | date:'yyyy-MM-dd' }}
+									</a>
+									<a ng-if='!todo.due_at' class="label todo-assign-due no-assign" data-placement="right" data-animation="am-flip-x" tower-popover='todo' data-template="partials/todo-assign.html">
+										未指定
+									</a>
+									 
 								</div>
 							</li>
 						</ul>
