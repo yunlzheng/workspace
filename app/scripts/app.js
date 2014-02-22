@@ -11,6 +11,8 @@ angular.module('towerApp', [
   'tower.directives.popover',
   'tower.resources',
   'ui.bootstrap.modal',
+  'ui.bootstrap.datepicker',
+  'ui.bootstrap.typeahead',
   'ui.calendar',
   'dialogs'
 ])

@@ -12,6 +12,43 @@ angular.module('towerApp')
           "content": "指派任务"
         };
 
+        $scope.today = function() {
+            $scope.dt = new Date();
+        };
+        
+        $scope.today();
+
+        $scope.showWeeks = false;
+
+        $scope.showButtonBar = false;
+ 
+
+        $scope.clear = function () {
+            $scope.dt = null;
+        };
+
+        // Disable weekend selection
+        $scope.disabled = function(date, mode) {
+            return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+        };
+
+
+        $scope.open = function($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+
+            $scope.opened = true;
+        };
+
+        $scope.dateOptions = {
+            'year-format': "'yy'",
+            'starting-day': 1
+        };
+
+        $scope.format = 'yyyy年MM月dd日';
+
+        $scope.states = ['zheng', 'Alaska'];
+
   }])
   .controller('SubDiscussCtrl', ['$scope', '$routeParams', '$dialogs','Project',function ($scope, $routeParams, $dialogs, Project) {
 
@@ -19,9 +56,11 @@ angular.module('towerApp')
     
     $scope.discusses = Project.discuss({id: $routeParams.project}); 
     
-
     $scope.newDiscuss = function(discuss){
         
+        if(!discuss.content){
+            discuss.content = 'RT.';
+        }
         var data = Project.newDiscuss({id: $routeParams.project}, discuss);
         $scope.discusses.unshift(data);
         $scope.showNewDissuss = false;
@@ -45,6 +84,7 @@ angular.module('towerApp')
         var data = Project.newTask({id: $routeParams.project}, taskList);
         data.addTodoing = true;
         $scope.tasks.unshift(data);
+        console.log(data);
         $scope.showNewTask = false;
         $scope.tasklist = {};
 
@@ -76,13 +116,18 @@ angular.module('towerApp')
 
     $scope.removeTodo = function(task, todo) {
        $http.delete('/api/tasks/'+task._id+'/todos/'+todo._id).success(function(){
-            task.todos.splice(index, 1);
+            angular.forEach(task.todos, function(atodo, index){
+                if(atodo._id === todo._id){
+                    task.todos.splice(index, 1);
+                    return;
+                }
+            });
        });
-       
     };
 
-    $scope.removeTask = function(task) {
+    $scope.removeTask = function(index) {
 
+        var task = $scope.tasks[index];
         $http.delete('/api/tasks/'+task._id).success(function(data){
             $scope.tasks.splice(index, 1);
         });

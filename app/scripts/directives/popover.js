@@ -42,7 +42,7 @@ angular.module('tower.directives.popover', ['tower.directives.tooltip'])
 
   })
 
-  .directive('bsPopover', function($window, $location, $sce, $popover) {
+  .directive('towerPopover', function($window, $location, $sce, $popover) {
 
     var requestAnimationFrame = $window.requestAnimationFrame || $window.setTimeout;
 
